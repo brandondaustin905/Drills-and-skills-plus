@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Mental Training, Visualization &amp; Fear — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 30px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.care{background:linear-gradient(135deg,#053F35,#00745F);color:#D6F5EC}
+.care h2{color:#fff}.care strong{color:var(--gold)}
+.step{position:relative;padding-top:30px}
+.num{position:absolute;top:-16px;left:22px;min-width:46px;height:46px;padding:0 10px;border-radius:14px;background:var(--hot);color:#fff;
+  font-family:Anton,sans-serif;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.drill{display:flex;gap:13px;align-items:flex-start;background:#FDFAFC;border:1.5px solid var(--line);border-radius:14px;padding:14px;margin:12px 0 0;cursor:pointer;transition:.18s;user-select:none}
+.drill:hover{border-color:var(--hot)}
+.drill input{position:absolute;opacity:0;pointer-events:none}
+.tick{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #D9C4D3;background:#fff;display:grid;place-items:center;margin-top:2px;transition:.18s}
+.tick svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.18s}
+.drill input:checked ~ .tick{background:var(--teal);border-color:var(--teal)}
+.drill input:checked ~ .tick svg{opacity:1;transform:scale(1)}
+.drill input:checked ~ .dt{color:#9A93A6}
+.drill input:focus-visible ~ .tick{outline:3px solid var(--hot);outline-offset:2px}
+.dt strong{display:block;color:var(--grape);font-size:16px;margin-bottom:2px}
+.dt span{font-size:14.5px}
+.tracker{position:sticky;bottom:14px;z-index:50;background:var(--grape);color:#fff;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 30px rgba(42,18,68,.3)}
+.tracker b{font-family:Anton,sans-serif;font-size:26px;line-height:1}
+.tracker span{font-size:13.5px;line-height:1.35;opacity:.9}
+.tracker button{margin-left:auto;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 05</span>
+  <h1>The <em>Mental</em><br>Side</h1>
+  <p class="dek">Perfect conditioning and flawless drills don't matter if the mind hesitates halfway through. Here's how trust actually gets built.</p>
+  <div class="chips"><span class="chip">⏱ 7 min read</span><span class="chip">🧠 Athletes &amp; parents</span><span class="chip">🏠 Home friendly</span></div>
+</header>
+
+<section class="card rev">
+  <h2>Why hesitation is the dangerous part</h2>
+  <p>Balking mid-skill isn't just frustrating — it's a genuine injury mechanism.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 200" role="img" aria-label="A chain showing doubt leading to a freeze response, then a broken body line, then a bad landing.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="12" y="46" width="188" height="82" rx="16" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="106" y="80" font-size="14.5" font-weight="700" fill="#A3134E" text-anchor="middle">Doubt</text>
+        <text x="106" y="102" font-size="13" fill="#7A7288" text-anchor="middle">mid-pass</text>
+        <rect x="236" y="46" width="188" height="82" rx="16" fill="#FFE4EB" stroke="#E5344E" stroke-width="2.5"/>
+        <text x="330" y="80" font-size="14.5" font-weight="700" fill="#B0122C" text-anchor="middle">Freeze</text>
+        <text x="330" y="102" font-size="13" fill="#7A7288" text-anchor="middle">body pulls the brake</text>
+        <rect x="460" y="46" width="188" height="82" rx="16" fill="#FBD9E1" stroke="#8C1030" stroke-width="2.5"/>
+        <text x="554" y="74" font-size="14.5" font-weight="700" fill="#8C1030" text-anchor="middle">Line breaks</text>
+        <text x="554" y="96" font-size="13" fill="#7A7288" text-anchor="middle">shoulder drops,</text>
+        <text x="554" y="113" font-size="13" fill="#7A7288" text-anchor="middle">core loosens</text>
+        <path d="M206 87 L228 87" stroke="#E5344E" stroke-width="3.5" marker-end="url(#a1)"/>
+        <path d="M430 87 L452 87" stroke="#E5344E" stroke-width="3.5" marker-end="url(#a1)"/>
+        <text x="330" y="170" font-size="14" font-weight="700" fill="#8C1030" text-anchor="middle">↓ the landing arrives wrong</text>
+      </g>
+      <defs><marker id="a1" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#E5344E"/></marker></defs>
+    </svg>
+    <figcaption>The brake gets pulled at the moment rotational energy is highest — which is exactly when you can least afford a broken shape.</figcaption>
+  </figure>
+  <p>This is why <strong>"just throw it" is bad coaching.</strong> A half-committed skill is more dangerous than one not attempted.</p>
+</section>
+
+<section class="card quote rev">
+  <h2>Does visualization actually work?</h2>
+  <p>Reasonably well, yes — with one honest caveat.</p>
+  <p>Imagined and executed movements show strong similarities in timing, in heart and breathing responses, and in which brain structures activate. Researchers describe them as <strong>functionally equivalent</strong> for training purposes, and motor imagery has measurable benefits for motor learning, rehab after injury, and sports performance.</p>
+  <p>The caveat: those same researchers are clear that imagined and real movements <em>are</em> distinct. Visualization builds familiarity and confidence. It doesn't replace reps.</p>
+  <p><strong>One detail worth using:</strong> imagining how a movement <em>feels</em> resembles real execution more closely than picturing it from the outside. Feel it, don't just watch it.</p>
+</section>
+
+<section class="card step rev">
+  <div class="num">1</div>
+  <span class="tag">Trust</span>
+  <h2>Mental rehearsal</h2>
+  <p>Quiet space, eyes closed. Run the whole skill start to finish at <strong>real speed</strong> — no fast-forwarding through the scary part.</p>
+  <p>Load it with sensory detail: the feel of the floor on the block, the visual cue at your spot, the sensation of a tight, locked finish.</p>
+  <div class="rule"><b>Dose</b>A few minutes, a few times a week. Consistency beats one long session.</div>
+  <label class="drill"><input type="checkbox" data-d="m1"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Rehearse one skill, start to finish</strong><span>Real time. Felt, not just seen.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">2</div>
+  <span class="tag">Reset</span>
+  <h2>Box breathing</h2>
+  <p>Right before stepping onto the strip. Four counts, four sides — that's the box.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 400 300" role="img" aria-label="A square diagram showing box breathing: inhale four counts up the left side, hold four across the top, exhale four down the right side, hold four across the bottom.">
+      <rect x="90" y="60" width="220" height="180" rx="18" fill="none" stroke="#00A88A" stroke-width="4"/>
+      <g font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00745F">
+        <text x="200" y="44" text-anchor="middle">HOLD · 4</text>
+        <text x="200" y="270" text-anchor="middle">HOLD · 4</text>
+      </g>
+      <g font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00745F">
+        <text x="76" y="155" text-anchor="end">IN · 4</text>
+        <text x="324" y="155" text-anchor="start">OUT · 4</text>
+      </g>
+      <path d="M90 200 L90 100" stroke="#FF2E7E" stroke-width="4" marker-end="url(#b1)"/>
+      <path d="M130 60 L270 60" stroke="#FF2E7E" stroke-width="4" marker-end="url(#b1)"/>
+      <path d="M310 100 L310 200" stroke="#FF2E7E" stroke-width="4" marker-end="url(#b1)"/>
+      <path d="M270 240 L130 240" stroke="#FF2E7E" stroke-width="4" marker-end="url(#b1)"/>
+      <defs><marker id="b1" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FF2E7E"/></marker></defs>
+      <text x="200" y="145" font-family="DM Sans,sans-serif" font-size="15" font-weight="700" fill="#2A1244" text-anchor="middle">3–4 rounds</text>
+      <text x="200" y="168" font-family="DM Sans,sans-serif" font-size="13" fill="#7A7288" text-anchor="middle">nose in, mouth out</text>
+    </svg>
+    <figcaption>Slow breathing shifts the nervous system out of high alert and brings the heart rate down. Not instant, not magic — but it works, and it's free.</figcaption>
+  </figure>
+  <label class="drill"><input type="checkbox" data-d="m2"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Box breathing before a pass</strong><span>3–4 rounds. Practise it when calm so it's there when you're not.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">3</div>
+  <span class="tag">Exposure</span>
+  <h2>The ladder</h2>
+  <p>Confidence can't be forced. You scale one variable at a time until the brain accepts the new level as safe.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 280" role="img" aria-label="A staircase of six steps: heavy spot, light spot, wedge mat, extra landing mats, air track, competitive floor.">
+      <g font-family="DM Sans,sans-serif" font-size="13" font-weight="700">
+        <rect x="20" y="228" width="102" height="34" rx="9" fill="#D9F4EE" stroke="#00A88A" stroke-width="2"/>
+        <text x="71" y="250" fill="#00745F" text-anchor="middle">Heavy spot</text>
+        <rect x="126" y="190" width="102" height="34" rx="9" fill="#D9F4EE" stroke="#00A88A" stroke-width="2"/>
+        <text x="177" y="212" fill="#00745F" text-anchor="middle">Light spot</text>
+        <rect x="232" y="152" width="102" height="34" rx="9" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2"/>
+        <text x="283" y="174" fill="#7A5200" text-anchor="middle">Wedge mat</text>
+        <rect x="338" y="114" width="102" height="34" rx="9" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2"/>
+        <text x="389" y="136" fill="#7A5200" text-anchor="middle">Extra mats</text>
+        <rect x="444" y="76" width="102" height="34" rx="9" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2"/>
+        <text x="495" y="98" fill="#A3134E" text-anchor="middle">Air track</text>
+        <rect x="550" y="38" width="102" height="34" rx="9" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2"/>
+        <text x="601" y="60" fill="#A3134E" text-anchor="middle">Floor</text>
+      </g>
+      <path d="M40 210 L40 130" stroke="#00A88A" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#c1)"/>
+      <text x="52" y="126" font-family="DM Sans,sans-serif" font-size="12.5" fill="#00745F">going back down a rung</text>
+      <text x="52" y="144" font-family="DM Sans,sans-serif" font-size="12.5" fill="#00745F">is a normal decision</text>
+      <defs><marker id="c1" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#00A88A"/></marker></defs>
+    </svg>
+    <figcaption>Move up only when psychological confidence matches physical readiness. Both have to be there.</figcaption>
+  </figure>
+  <label class="drill"><input type="checkbox" data-d="m3"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Know which rung you're on</strong><span>Name it out loud with your coach. Vague progress is where blocks hide.</span></span></label>
+</section>
+
+<section class="card care rev">
+  <h2>When a block is more than a block</h2>
+  <p>Most blocks resolve with patience and a step backwards. Some don't, and it helps to know the difference.</p>
+  <p><strong>Worth talking to someone qualified</strong> — a sport psychologist, a counsellor, or your doctor — if:</p>
+  <p>The fear is spreading beyond one skill. There's dread before practice, or trouble sleeping. Your athlete stops wanting to go to the gym. Or it started after a fall or an injury.</p>
+  <p>None of that means anything is wrong with the athlete. Blocks after a scare are extremely common and they are not a character flaw. But they aren't always something a coach can drill away, and pushing harder in those situations usually makes it worse.</p>
+</section>
+
+<section class="card rev">
+  <h2>For coaches and parents</h2>
+  <p><strong>Never shame or rush an athlete in a block.</strong> Drop them calmly down the ladder until the rhythm comes back. Treat it as a training decision, not a punishment.</p>
+  <p><strong>Watch the pressure at home.</strong> An athlete in a block is usually already frustrated with themselves. Comparisons to teammates, deadlines, and "you had it last week" all raise the stakes at exactly the moment you want them lowered.</p>
+  <p><strong>Mental blocks are a breakdown in trust, not a physical limitation.</strong> Rebuilding trust takes the time it takes.</p>
+</section>
+
+<div class="tracker">
+  <b id="cnt">0/3</b>
+  <span id="msg">Tick what you've practised. Saved on this device.</span>
+  <button id="rst" type="button">Reset</button>
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching or professional mental health support.</p>
+  <p>Motor imagery evidence from <a href="https://www.pnas.org/doi/10.1073/pnas.2423642122">PNAS</a>.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  var boxes=[].slice.call(document.querySelectorAll('.drill input')),
+      cnt=document.getElementById('cnt'),msg=document.getElementById('msg'),KEY='mental-drills';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  function paint(){var n=boxes.filter(function(x){return x.checked}).length;
+    cnt.textContent=n+'/'+boxes.length;
+    msg.textContent=n===0?'Tick what you\u2019ve practised. Saved on this device.'
+      :n<boxes.length?'Good. '+(boxes.length-n)+' to go.'
+      :'All three in the toolkit.';}
+  var st=load();
+  boxes.forEach(function(x){if(st[x.dataset.d])x.checked=true;
+    x.addEventListener('change',function(){var s=load();s[x.dataset.d]=x.checked;save(s);paint();});});
+  paint();
+  document.getElementById('rst').addEventListener('click',function(){
+    boxes.forEach(function(x){x.checked=false});save({});paint();});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
