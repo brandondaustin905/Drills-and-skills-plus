@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Back Handspring Progressions — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grape:#2A1244; --ink:#231A32; --body:#4A4358;
+  --hot:#FF2E7E; --gold:#FFC53D; --teal:#00A88A; --red:#E5344E;
+  --bg:#FFF4F8; --card:#FFFFFF; --line:#F0DCE7;
+  --shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);
+  font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+  -webkit-font-smoothing:antialiased}
+
+/* progress */
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+
+/* hero */
+.hero{padding:54px 0 30px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--grape);color:#fff;
+  font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);
+  font-size:clamp(40px,12vw,62px);line-height:.94;letter-spacing:-.01em;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px;color:var(--body)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;
+  font-size:13px;font-weight:500;color:var(--grape)}
+
+/* cards */
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-family:"DM Sans",sans-serif;font-weight:700;color:var(--grape);
+  font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+
+.gate{background:linear-gradient(135deg,#053F35,#00745F);color:#D6F5EC}
+.gate h2{color:#fff}
+.gate strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}
+.danger strong{color:#FFD9E3}
+
+.step{position:relative;padding-top:30px}
+.num{position:absolute;top:-16px;left:22px;width:46px;height:46px;border-radius:14px;
+  background:var(--hot);color:#fff;font-family:Anton,sans-serif;font-size:24px;
+  display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+
+/* checkable drills */
+.drill{display:flex;gap:13px;align-items:flex-start;background:#FDFAFC;border:1.5px solid var(--line);
+  border-radius:14px;padding:14px;margin:10px 0;cursor:pointer;transition:.18s;user-select:none}
+.drill:hover{border-color:var(--hot)}
+.drill input{position:absolute;opacity:0;pointer-events:none}
+.tick{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #D9C4D3;background:#fff;
+  display:grid;place-items:center;margin-top:2px;transition:.18s}
+.tick svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.18s}
+.drill input:checked ~ .tick{background:var(--teal);border-color:var(--teal)}
+.drill input:checked ~ .tick svg{opacity:1;transform:scale(1)}
+.drill input:checked ~ .dt{color:#9A93A6}
+.drill input:focus-visible ~ .tick{outline:3px solid var(--hot);outline-offset:2px}
+.dt strong{display:block;color:var(--grape);font-size:16px;margin-bottom:2px}
+.dt span{font-size:14.5px}
+.reps{display:inline-block;background:var(--gold);color:#3A2A00;font-size:12.5px;font-weight:700;
+  padding:3px 9px;border-radius:7px;margin-top:7px}
+
+/* tracker */
+.tracker{position:sticky;bottom:14px;z-index:50;background:var(--grape);color:#fff;border-radius:16px;
+  padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 30px rgba(42,18,68,.3)}
+.tracker b{font-family:Anton,sans-serif;font-size:26px;line-height:1}
+.tracker span{font-size:13.5px;line-height:1.35;opacity:.9}
+.tracker button{margin-left:auto;background:rgba(255,255,255,.14);color:#fff;border:0;
+  border-radius:9px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+
+/* diagrams */
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+
+/* problem list */
+.prob{border-left:4px solid var(--hot);background:#FFF7FA;border-radius:0 12px 12px 0;padding:13px 16px;margin:11px 0}
+.prob b{display:block;color:var(--grape);font-size:16px}
+.prob span{font-size:14.5px}
+.prob em{font-style:normal;color:var(--teal);font-weight:700}
+
+.vid{position:relative;padding-bottom:56.25%;border-radius:16px;overflow:hidden;margin:14px 0}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="bar"><i id="prog"></i></div>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 01</span>
+  <h1>Back<br>Handspring<br><em>Progressions</em></h1>
+  <p class="dek">Four steps, in order. What each one asks of the body, what usually breaks, and how to know you're ready for the next.</p>
+  <div class="chips">
+    <span class="chip">⏱ 8 min read</span>
+    <span class="chip">🤸 Level 1–2</span>
+    <span class="chip">🏟 Gym only</span>
+  </div>
+</header>
+
+<section class="card gate rev">
+  <h2>Start here — the gate</h2>
+  <p>Before back handspring work begins, an athlete should have:</p>
+  <p><strong>60-second wall handstand</strong> — straight body, straight arms.<br>
+     <strong>Bridge, 10–20 seconds</strong> — shoulders stacked over hands.<br>
+     <strong>Bridge kickover</strong> and ideally a <strong>back walkover</strong>.</p>
+  <p>If those aren't there yet, they <em>are</em> the training plan. Nothing below will work without them.</p>
+</section>
+
+<section class="card rev">
+  <h2>The five phases</h2>
+  <p>It's one continuous motion, but it fails in specific places. Knowing which phase is breaking is most of the fix.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 800 268" role="img" aria-label="Five side-view stages of a back handspring: sit, drive, flight, hand contact and block, then snap down to the feet.">
+      <line x1="10" y1="226" x2="790" y2="226" stroke="#E4D3DE" stroke-width="3"/>
+      <g stroke="#2A1244" stroke-width="4" fill="none" stroke-linecap="round">
+        <circle cx="92" cy="96" r="11" fill="#2A1244" stroke="none"/>
+        <path d="M92 107 L96 152"/><path d="M96 152 L110 186 L102 226"/><path d="M94 117 L120 146"/>
+        <circle cx="222" cy="92" r="11" fill="#2A1244" stroke="none"/>
+        <path d="M222 103 L236 150"/><path d="M236 150 L250 188 L258 224"/><path d="M224 113 L200 78"/>
+        <circle cx="372" cy="126" r="11" fill="#2A1244" stroke="none"/>
+        <path d="M380 133 L418 148"/><path d="M418 148 L440 176 L452 202"/><path d="M372 135 L344 168"/>
+        <circle cx="530" cy="176" r="11" fill="#2A1244" stroke="none"/>
+        <path d="M522 226 L534 164"/><path d="M534 164 L566 126"/><path d="M566 126 L586 148 L598 172"/>
+        <circle cx="676" cy="140" r="11" fill="#2A1244" stroke="none"/>
+        <path d="M660 200 L682 152"/><path d="M682 152 L710 152"/><path d="M710 152 L718 190 L722 226"/>
+      </g>
+      <g font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" text-anchor="middle">
+        <text x="100" y="252" fill="#FF2E7E">1 · SIT</text>
+        <text x="230" y="252" fill="#FF2E7E">2 · DRIVE</text>
+        <text x="395" y="252" fill="#FF2E7E">3 · FLIGHT</text>
+        <text x="560" y="252" fill="#FF2E7E">4 · BLOCK</text>
+        <text x="695" y="252" fill="#FF2E7E">5 · SNAP</text>
+      </g>
+    </svg>
+    <figcaption>Side view, athlete travelling right. The body line stays long through phases 3 and 4 — the arch is a shape you pass through, not one you sit in.</figcaption>
+  </figure>
+</section>
+
+<section class="card step rev">
+  <div class="num">1</div>
+  <span class="tag">Shoulders</span>
+  <h2>Bridges &amp; shoulder range</h2>
+  <p>Tight shoulders are one of the most common reasons athletes compensate by dumping into the lower back. Low back soreness after tumbling? Check here first — and mention it to the coach.</p>
+
+  <figure>
+    <svg class="dia" viewBox="0 0 700 244" role="img" aria-label="Two bridges compared. Left, shoulders behind the wrists — incorrect. Right, shoulders stacked over the wrists — correct.">
+      <line x1="10" y1="205" x2="690" y2="205" stroke="#E4D3DE" stroke-width="3"/>
+      <path d="M70 205 Q170 70 268 205" stroke="#E5344E" stroke-width="4.5" fill="none"/>
+      <line x1="70" y1="205" x2="70" y2="44" stroke="#E5344E" stroke-width="2" stroke-dasharray="6 6"/>
+      <circle cx="70" cy="205" r="7" fill="#2A1244"/><circle cx="104" cy="140" r="8" fill="#E5344E"/>
+      <text x="114" y="134" font-size="13.5" fill="#E5344E" font-family="DM Sans,sans-serif" font-weight="700">shoulder</text>
+      <text x="42" y="230" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif">wrist</text>
+      <text x="168" y="30" font-size="14.5" fill="#E5344E" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Behind the wrists</text>
+      <path d="M420 205 Q510 62 618 205" stroke="#00A88A" stroke-width="4.5" fill="none"/>
+      <line x1="420" y1="205" x2="420" y2="44" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 6"/>
+      <circle cx="420" cy="205" r="7" fill="#2A1244"/><circle cx="420" cy="132" r="8" fill="#00A88A"/>
+      <text x="432" y="126" font-size="13.5" fill="#00A88A" font-family="DM Sans,sans-serif" font-weight="700">shoulder</text>
+      <text x="392" y="230" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif">wrist</text>
+      <text x="519" y="30" font-size="14.5" fill="#00A88A" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Stacked over the wrists</text>
+    </svg>
+    <figcaption>When the shoulder can't travel over the wrist, the range gets borrowed from the lower back instead.</figcaption>
+  </figure>
+
+  <label class="drill"><input type="checkbox" data-d="d1"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dt"><strong>Elevated bridge push-offs</strong><span>Feet on a panel mat. Push into a bridge, shift weight fully over the hands until the shoulders pass the wrists. Hold 5 seconds, then push hard through the shoulders back to your feet.</span><span class="reps">3 × 5 · quality over reps</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">2</div>
+  <span class="tag">Power</span>
+  <h2>Handstand snap downs</h2>
+  <p>The fast switch from extended to hollow. This is where every bit of your block power comes from.</p>
+  <label class="drill"><input type="checkbox" data-d="d2"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dt"><strong>Snap down to rebound</strong><span>Chest to wall, hands six inches out. Shrug tall. Snap the legs down by contracting the core, block off the floor through the shoulders, rebound straight up into a tight pencil jump.</span><span class="reps">4 × 8</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">3</div>
+  <span class="tag">Trajectory</span>
+  <h2>Wedge mat sit &amp; drive</h2>
+  <p>Builds the sit and the backward line without the fear of the fall underneath it.</p>
+
+  <figure>
+    <svg class="dia" viewBox="0 0 700 252" role="img" aria-label="Two setups compared. Left, knees driving forward past the toes — incorrect. Right, hips sitting back with knees behind the toes — correct.">
+      <line x1="10" y1="215" x2="690" y2="215" stroke="#E4D3DE" stroke-width="3"/>
+      <g stroke="#E5344E" stroke-width="4.5" fill="none" stroke-linecap="round">
+        <circle cx="150" cy="70" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M150 82 L150 140"/><path d="M150 140 L186 178 L160 215"/><path d="M150 93 L178 122"/>
+      </g>
+      <line x1="160" y1="215" x2="160" y2="44" stroke="#E5344E" stroke-width="2" stroke-dasharray="6 6"/>
+      <circle cx="186" cy="178" r="8" fill="#E5344E"/>
+      <text x="198" y="176" font-size="13.5" fill="#E5344E" font-family="DM Sans,sans-serif" font-weight="700">knee past toe</text>
+      <text x="150" y="30" font-size="14.5" fill="#E5344E" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Squatting down</text>
+      <text x="150" y="242" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif" text-anchor="middle">power leaks upward</text>
+      <g stroke="#00A88A" stroke-width="4.5" fill="none" stroke-linecap="round">
+        <circle cx="512" cy="74" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M512 86 L500 142"/><path d="M500 142 L516 180 L524 215"/><path d="M512 97 L544 126"/>
+      </g>
+      <line x1="524" y1="215" x2="524" y2="44" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 6"/>
+      <circle cx="516" cy="180" r="8" fill="#00A88A"/>
+      <text x="384" y="178" font-size="13.5" fill="#00A88A" font-family="DM Sans,sans-serif" font-weight="700">knee behind toe</text>
+      <text x="512" y="30" font-size="14.5" fill="#00A88A" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Sitting back</text>
+      <text x="512" y="242" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif" text-anchor="middle">power goes backward</text>
+    </svg>
+    <figcaption>Dashed line marks the toes. "Reach back for a chair that's slightly too far away" is the cue that produces it.</figcaption>
+  </figure>
+
+  <label class="drill"><input type="checkbox" data-d="d3"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dt"><strong>Incline sit &amp; drive</strong><span>Stand at the high end of a wedge, back facing down the incline. Sit with knees behind the toes, drive the arms back, let the incline catch the line. A spotter guides the hips over so nothing loads the head.</span><span class="reps">Until 5 clean reps with a neutral head</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">4</div>
+  <span class="tag">Rhythm</span>
+  <h2>Connecting it</h2>
+  <p>Converting energy from the skill before it into backward speed — the difference between a handspring that stops and one that goes somewhere.</p>
+  <label class="drill"><input type="checkbox" data-d="d4"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="dt"><strong>Power bound to BHS entry</strong><span>Explosive backward bound, low and long. Land loaded — absorbing through knees and ankles, not collapsing and not locked rigid — then straight into the sit with no pause.</span><span class="reps">3 × 5 connections</span></span></label>
+</section>
+
+<section class="card rev">
+  <h2>Where the hands go</h2>
+  <p>The correction coaches make most and athletes notice least.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 700 224" role="img" aria-label="Hand placement from above. Left, fingers angled inward toward each other, closing the shoulders. Right, hands turned slightly outward with thumbs forward, opening the shoulders.">
+      <defs>
+        <marker id="ar" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#E5344E"/></marker>
+        <marker id="ag" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#00A88A"/></marker>
+      </defs>
+      <g transform="translate(58,34)">
+        <g fill="#FFE4EB" stroke="#E5344E" stroke-width="3">
+          <rect x="0" y="40" width="46" height="60" rx="12" transform="rotate(24 23 70)"/>
+          <rect x="122" y="40" width="46" height="60" rx="12" transform="rotate(-24 145 70)"/>
+        </g>
+        <path d="M32 34 L54 8" stroke="#E5344E" stroke-width="3" marker-end="url(#ar)"/>
+        <path d="M136 34 L114 8" stroke="#E5344E" stroke-width="3" marker-end="url(#ar)"/>
+        <text x="84" y="144" font-size="14.5" fill="#E5344E" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Fingers turned in</text>
+        <text x="84" y="165" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif" text-anchor="middle">shoulders close, elbows buckle</text>
+      </g>
+      <g transform="translate(418,34)">
+        <g fill="#D9F4EE" stroke="#00A88A" stroke-width="3">
+          <rect x="0" y="40" width="46" height="60" rx="12" transform="rotate(-12 23 70)"/>
+          <rect x="122" y="40" width="46" height="60" rx="12" transform="rotate(12 145 70)"/>
+        </g>
+        <path d="M14 32 L2 6" stroke="#00A88A" stroke-width="3" marker-end="url(#ag)"/>
+        <path d="M154 32 L166 6" stroke="#00A88A" stroke-width="3" marker-end="url(#ag)"/>
+        <text x="84" y="144" font-size="14.5" fill="#00A88A" font-family="DM Sans,sans-serif" font-weight="700" text-anchor="middle">Thumbs forward</text>
+        <text x="84" y="165" font-size="13" fill="#8B8398" font-family="DM Sans,sans-serif" text-anchor="middle">shoulder joint opens</text>
+      </g>
+    </svg>
+    <figcaption>From above, athlete travelling toward the top of the frame.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>Problem solver</h2>
+  <div class="prob"><b>Elbows buckling on contact</b><span>Closed shoulders, hands turned in. <em>→ Thumbs forward, rebuild bridge range.</em></span></div>
+  <div class="prob"><b>No height, goes nowhere</b><span>Squatting down instead of sitting back. <em>→ Chair cue, wedge reps.</em></span></div>
+  <div class="prob"><b>Lower back sore after tumbling</b><span>Range borrowed from the spine, often tight shoulders. <em>→ Step 1, and tell the coach.</em></span></div>
+  <div class="prob"><b>Lands dead, no rebound</b><span>Weak or late shoulder block. <em>→ Snap downs into pencil jumps.</em></span></div>
+  <div class="prob"><b>Head thrown back</b><span>Looking for the floor. <em>→ Neutral head, back to wedge and spot.</em></span></div>
+</section>
+
+<section class="card rev">
+  <h2>When the block is mental</h2>
+  <p>Balking isn't disobedience and it's rarely stubbornness. It's usually a body refusing a skill it doesn't yet have the awareness or the trust to finish.</p>
+  <h3>What works</h3>
+  <p>Go back a progression, not forward. Return to the wedge and the spot. Rebuild where the consequence is low. A few minutes of visualisation at night. And time.</p>
+  <h3>What doesn't</h3>
+  <p>Ultimatums, comparisons to teammates, or "just throw it." Pushing an athlete through a block on a dead floor is how blocks become injuries, and injuries become quitting.</p>
+</section>
+
+<section class="card rev">
+  <h2>Watch it</h2>
+  <div class="vid"><iframe src="https://www.youtube.com/embed/crNEeo63POQ" title="How to do a Back Handspring with Drills That Actually Work — GymnasticsHQ" allowfullscreen loading="lazy"></iframe></div>
+  <p style="font-size:14.5px">GymnasticsHQ. Gymnastics-focused, identical mechanics.</p>
+</section>
+
+<section class="card danger rev">
+  <h2>Safety protocol</h2>
+  <p><strong>This is a gym skill.</strong> Qualified coach, proper matting. Not a driveway, not a backyard trampoline. The progression runs tramp or tumble track → barrel with spotting → floor when the coach says so.</p>
+  <p>No athlete moves from wedge or spot to a dead floor until they can stick <strong>10 consecutive snap downs</strong> with a flat, non-arched spine.</p>
+  <p>Head stays neutral. Never thrown back.</p>
+  <p>Lower back, wrist or neck pain is a stop-and-report — never something to work through.</p>
+</section>
+
+<div class="tracker">
+  <b id="cnt">0/4</b>
+  <span id="msg">Tick a drill when you've done it. Saved on this device.</span>
+  <button id="rst" type="button">Reset</button>
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+  <p>Prerequisites and home-training guidance from <a href="https://gymnasticshq.com/backhandspring/">GymnasticsHQ</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';
+  },{passive:true});
+
+  var boxes=[].slice.call(document.querySelectorAll('.drill input')),
+      cnt=document.getElementById('cnt'), msg=document.getElementById('msg'),
+      KEY='bhs-drills';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  function paint(){
+    var n=boxes.filter(function(x){return x.checked}).length;
+    cnt.textContent=n+'/'+boxes.length;
+    msg.textContent = n===0 ? 'Tick a drill when you\u2019ve done it. Saved on this device.'
+      : n<boxes.length ? 'Nice. '+(boxes.length-n)+' to go before the next lesson.'
+      : 'All four logged. Take it to your coach.';
+  }
+  var st=load();
+  boxes.forEach(function(x){
+    if(st[x.dataset.d]) x.checked=true;
+    x.addEventListener('change',function(){
+      var s=load(); s[x.dataset.d]=x.checked; save(s); paint();
+    });
+  });
+  paint();
+  document.getElementById('rst').addEventListener('click',function(){
+    boxes.forEach(function(x){x.checked=false}); save({}); paint();
+  });
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)} });
+    },{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  } else {
+    document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});
+  }
+})();
+</script>
+</body>
+</html>
