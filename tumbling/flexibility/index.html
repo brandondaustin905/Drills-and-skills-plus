@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Flexibility &amp; Range Conditioning — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 30px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(40px,12vw,62px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}.danger strong{color:#FFD9E3}
+.step{position:relative;padding-top:30px}
+.num{position:absolute;top:-16px;left:22px;min-width:46px;height:46px;padding:0 10px;border-radius:14px;background:var(--hot);color:#fff;
+  font-family:Anton,sans-serif;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.drill{display:flex;gap:13px;align-items:flex-start;background:#FDFAFC;border:1.5px solid var(--line);border-radius:14px;padding:14px;margin:12px 0 0;cursor:pointer;transition:.18s;user-select:none}
+.drill:hover{border-color:var(--hot)}
+.drill input{position:absolute;opacity:0;pointer-events:none}
+.tick{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #D9C4D3;background:#fff;display:grid;place-items:center;margin-top:2px;transition:.18s}
+.tick svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.18s}
+.drill input:checked ~ .tick{background:var(--teal);border-color:var(--teal)}
+.drill input:checked ~ .tick svg{opacity:1;transform:scale(1)}
+.drill input:checked ~ .dt{color:#9A93A6}
+.drill input:focus-visible ~ .tick{outline:3px solid var(--hot);outline-offset:2px}
+.dt strong{display:block;color:var(--grape);font-size:16px;margin-bottom:2px}
+.dt span{font-size:14.5px}
+.tracker{position:sticky;bottom:14px;z-index:50;background:var(--grape);color:#fff;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 30px rgba(42,18,68,.3)}
+.tracker b{font-family:Anton,sans-serif;font-size:26px;line-height:1}
+.tracker span{font-size:13.5px;line-height:1.35;opacity:.9}
+.tracker button{margin-left:auto;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.tl{display:flex;gap:0;margin:14px 0;border-radius:12px;overflow:hidden;border:1.5px solid var(--line)}
+.tl div{flex:1;padding:12px 10px;font-size:13.5px;text-align:center}
+.tl .a{background:#D9F4EE;color:#005F4E}
+.tl .b{background:#FFF0F6;color:#A3134E}
+.tl .c{background:#D9F4EE;color:#005F4E}
+.tl strong{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 04</span>
+  <h1>Flexibility<br>&amp; <em>Range</em></h1>
+  <p class="dek">Not about looking bendy. About being able to hit a shape without your lower back paying for it.</p>
+  <div class="chips"><span class="chip">⏱ 7 min read</span><span class="chip">🧘 Daily-ish</span><span class="chip">🏠 Home friendly</span></div>
+</header>
+
+<section class="card quote rev">
+  <h2>One honest thing first</h2>
+  <p>Stretching gets sold as injury prevention. The evidence for that is weak — a panel of international stretching researchers recently reached agreement that they <strong>don't recommend stretching for injury prevention in general</strong>, and systematic reviews have repeatedly found no meaningful drop in overall injury rates.</p>
+  <p>What does reduce injury risk is <strong>strength</strong>. That evidence is much stronger.</p>
+  <p>So: this lesson unlocks the shapes. Your conditioning keeps you safe. You need both, and they're doing different jobs.</p>
+</section>
+
+<section class="card rev">
+  <h2>The open shoulder line</h2>
+  <p>The single most important range in tumbling, and the one most often missing.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 250" role="img" aria-label="Limited shoulder range forces the arch into the lower back. Full shoulder range lets the arch spread evenly through the body.">
+      <line x1="10" y1="216" x2="650" y2="216" stroke="#E4D3DE" stroke-width="3"/>
+      <path d="M92 216 Q150 96 208 216" stroke="#E5344E" stroke-width="5" fill="none"/>
+      <circle cx="92" cy="216" r="7" fill="#2A1244"/>
+      <path d="M92 216 L126 152" stroke="#E5344E" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="126" cy="152" r="8" fill="#E5344E"/>
+      <ellipse cx="168" cy="140" rx="26" ry="17" fill="none" stroke="#E5344E" stroke-width="3" stroke-dasharray="5 4"/>
+      <text x="150" y="72" font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" fill="#E5344E" text-anchor="middle">Shoulders don't open</text>
+      <text x="150" y="92" font-family="DM Sans,sans-serif" font-size="13" fill="#8B8398" text-anchor="middle">arch loads one spot</text>
+      <text x="150" y="244" font-family="DM Sans,sans-serif" font-size="13" fill="#E5344E" text-anchor="middle">↑ lower back takes it</text>
+      <path d="M432 216 Q510 74 596 216" stroke="#00A88A" stroke-width="5" fill="none"/>
+      <circle cx="432" cy="216" r="7" fill="#2A1244"/>
+      <path d="M432 216 L432 138" stroke="#00A88A" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="432" cy="138" r="8" fill="#00A88A"/>
+      <line x1="432" y1="216" x2="432" y2="60" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 6"/>
+      <text x="514" y="72" font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" fill="#00A88A" text-anchor="middle">Shoulders stack over wrists</text>
+      <text x="514" y="92" font-family="DM Sans,sans-serif" font-size="13" fill="#8B8398" text-anchor="middle">curve spreads evenly</text>
+    </svg>
+    <figcaption>If the shoulders can't open overhead, the athlete makes the range up by arching harder — and that lands in the lumbar spine. It's the most common source of chronic low back fatigue in tumblers.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>Hinge, don't curve</h2>
+  <p>Range should come from the big joints — hips and shoulders — not from rounding the spine.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 240" role="img" aria-label="A rounded spine folding forward compared with a flat-backed hinge from the hips.">
+      <g fill="none" stroke-linecap="round">
+        <circle cx="118" cy="120" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M126 126 Q168 92 196 128" stroke="#E5344E" stroke-width="5"/>
+        <path d="M196 128 L196 210" stroke="#E5344E" stroke-width="5"/>
+        <circle cx="522" cy="98" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M532 104 L604 132" stroke="#00A88A" stroke-width="5"/>
+        <path d="M604 132 L604 210" stroke="#00A88A" stroke-width="5"/>
+      </g>
+      <line x1="60" y1="210" x2="280" y2="210" stroke="#E4D3DE" stroke-width="3"/>
+      <line x1="470" y1="210" x2="650" y2="210" stroke="#E4D3DE" stroke-width="3"/>
+      <text x="170" y="64" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Rounded spine</text>
+      <text x="170" y="236" font-family="DM Sans,sans-serif" font-size="13" fill="#8B8398" text-anchor="middle">head drops to knees</text>
+      <text x="560" y="64" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Flat-back hinge</text>
+      <text x="560" y="236" font-family="DM Sans,sans-serif" font-size="13" fill="#8B8398" text-anchor="middle">chest reaches to toes</text>
+    </svg>
+    <figcaption>Same fold, different structure. The flat back keeps the alignment and puts the stretch in the hamstrings, where you wanted it.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>When to stretch what</h2>
+  <p>This one surprises most athletes: long static holds can temporarily reduce power. Doing them right before explosive tumbling works against you.</p>
+  <div class="tl">
+    <div class="a"><strong>Before</strong>Dynamic — leg swings, lunges, circles</div>
+    <div class="b"><strong>Tumbling</strong>Skip the long holds</div>
+    <div class="c"><strong>After</strong>Static holds, 20–30s</div>
+  </div>
+  <p>Range work sticks better in a separate session or after training anyway. Warm tissue lengthens; cold tissue resists and fights back.</p>
+</section>
+
+<section class="card step rev">
+  <div class="num">1</div>
+  <span class="tag">BHS · Layout</span>
+  <h2>Shoulder bridge</h2>
+  <p>From a bridge, actively drive the chest forward over the hands, working toward stacking the shoulders directly over the wrists. Feet stay glued to the floor.</p>
+  <div class="rule"><b>Watch for</b>If the shoulders won't travel, don't force it by arching harder. Lower the height, take the range you have.</div>
+  <label class="drill"><input type="checkbox" data-d="f1"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Shoulder bridge hold</strong><span>20–30 seconds, 3 rounds. After training, not before.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">2</div>
+  <span class="tag">Tucks · Aerials</span>
+  <h2>Hip flexor lunge</h2>
+  <p>Deep lunge, front knee stacked precisely over the ankle. Pelvis tucked under, torso completely vertical. Drive the hips forward slightly without letting the lower back arch.</p>
+  <div class="rule"><b>Watch for</b>The lower back arching is the cheat. Tuck the pelvis harder and the stretch moves to where it belongs.</div>
+  <label class="drill"><input type="checkbox" data-d="f2"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Lunge hold, both sides</strong><span>20–30 seconds each, 3 rounds.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">3</div>
+  <span class="tag">Walkovers · Layout</span>
+  <h2>Flat-back pike fold</h2>
+  <p>Standing or seated, pull the kneecaps up to engage the quads. Hinge strictly from the hip joints, spine completely flat and neutral. Reach the chest toward the toes.</p>
+  <div class="rule"><b>Watch for</b>Dropping the head to the knees. That's a rounded spine, not a hamstring stretch — and it feels deeper while doing less.</div>
+  <label class="drill"><input type="checkbox" data-d="f3"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Pike fold hold</strong><span>20–30 seconds, 3 rounds.</span></span></label>
+  <label class="drill"><input type="checkbox" data-d="f4"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Matching core conditioning</strong><span>Every range session gets paired strength work. This is the half that actually protects you.</span></span></label>
+</section>
+
+<section class="card danger rev">
+  <h2>Safe conditioning protocol</h2>
+  <p><strong>Warm first.</strong> 10–15 minutes raising body temperature. Cold tissue doesn't lengthen, it resists.</p>
+  <p><strong>Never force it.</strong> Push into a stretch and the muscle protectively contracts — you get the opposite of what you came for. Controlled and progressive, always.</p>
+  <p><strong>No bouncing, no partner pushing you deeper.</strong> Range built by force comes off just as fast and takes something with it.</p>
+  <p><strong>Pair it with strength.</strong> Unlocked range without the strength to stabilise it mid-air is useless and genuinely dangerous.</p>
+  <p>Sharp pinching in a joint, lower back pain, or anything down the back of the leg is a stop-and-report — not something to breathe through.</p>
+</section>
+
+<div class="tracker">
+  <b id="cnt">0/4</b>
+  <span id="msg">Tick these off after training. Saved on this device.</span>
+  <button id="rst" type="button">Reset</button>
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+  <p>Injury-prevention evidence from the <a href="https://www.sciencedirect.com/science/article/pii/S2095254625000468">international Delphi consensus on stretching</a> and <a href="https://mcpress.mayoclinic.org/nutrition-fitness/does-stretching-prevent-injuries/">Mayo Clinic Press</a>.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  var boxes=[].slice.call(document.querySelectorAll('.drill input')),
+      cnt=document.getElementById('cnt'),msg=document.getElementById('msg'),KEY='flex-drills';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  function paint(){var n=boxes.filter(function(x){return x.checked}).length;
+    cnt.textContent=n+'/'+boxes.length;
+    msg.textContent=n===0?'Tick these off after training. Saved on this device.'
+      :n<boxes.length?'Good. '+(boxes.length-n)+' to go.'
+      :'Full session done.';}
+  var st=load();
+  boxes.forEach(function(x){if(st[x.dataset.d])x.checked=true;
+    x.addEventListener('change',function(){var s=load();s[x.dataset.d]=x.checked;save(s);paint();});});
+  paint();
+  document.getElementById('rst').addEventListener('click',function(){
+    boxes.forEach(function(x){x.checked=false});save({});paint();});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
