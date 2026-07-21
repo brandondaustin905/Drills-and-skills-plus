@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Rebounding &amp; Set Technique — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grape:#2A1244; --body:#4A4358;
+  --hot:#FF2E7E; --gold:#FFC53D; --teal:#00A88A; --red:#E5344E;
+  --bg:#FFF4F8; --card:#FFFFFF; --line:#F0DCE7;
+  --shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);
+  font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 30px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);
+  font-size:clamp(40px,12vw,62px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}
+.quote strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}
+.danger strong{color:#FFD9E3}
+.step{position:relative;padding-top:30px}
+.num{position:absolute;top:-16px;left:22px;width:46px;height:46px;border-radius:14px;background:var(--hot);color:#fff;
+  font-family:Anton,sans-serif;font-size:24px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.drill{display:flex;gap:13px;align-items:flex-start;background:#FDFAFC;border:1.5px solid var(--line);
+  border-radius:14px;padding:14px;margin:12px 0 0;cursor:pointer;transition:.18s;user-select:none}
+.drill:hover{border-color:var(--hot)}
+.drill input{position:absolute;opacity:0;pointer-events:none}
+.tick{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #D9C4D3;background:#fff;display:grid;place-items:center;margin-top:2px;transition:.18s}
+.tick svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.18s}
+.drill input:checked ~ .tick{background:var(--teal);border-color:var(--teal)}
+.drill input:checked ~ .tick svg{opacity:1;transform:scale(1)}
+.drill input:checked ~ .dt{color:#9A93A6}
+.drill input:focus-visible ~ .tick{outline:3px solid var(--hot);outline-offset:2px}
+.dt strong{display:block;color:var(--grape);font-size:16px;margin-bottom:2px}
+.dt span{font-size:14.5px}
+.tracker{position:sticky;bottom:14px;z-index:50;background:var(--grape);color:#fff;border-radius:16px;padding:14px 18px;
+  display:flex;align-items:center;gap:14px;box-shadow:0 10px 30px rgba(42,18,68,.3)}
+.tracker b{font-family:Anton,sans-serif;font-size:26px;line-height:1}
+.tracker span{font-size:13.5px;line-height:1.35;opacity:.9}
+.tracker button{margin-left:auto;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.prob{border-left:4px solid var(--hot);background:#FFF7FA;border-radius:0 12px 12px 0;padding:13px 16px;margin:11px 0}
+.prob b{display:block;color:var(--grape);font-size:16px}
+.prob span{font-size:14.5px}
+.prob em{font-style:normal;color:var(--teal);font-weight:700}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 02</span>
+  <h1>Rebounding<br>&amp; the <em>Set</em></h1>
+  <p class="dek">Height doesn't come from strong legs. It comes from what happens in the half-second your feet are on the floor.</p>
+  <div class="chips"><span class="chip">⏱ 7 min read</span><span class="chip">🤸 All levels</span><span class="chip">🏟 Sprung surface only</span></div>
+</header>
+
+<section class="card quote rev">
+  <h2>Why this one is hard</h2>
+  <p>Jumping is natural. <strong>Rebounding isn't.</strong></p>
+  <p>Humans jump — we're built for it. But nothing in ordinary life asks you to take horizontal speed and redirect it straight up. So athletes turn up already decent at jumping and completely untrained at rebounding.</p>
+  <p>That's why this gets its own lesson, and why the strongest legs in the gym often don't belong to the highest tumbler.</p>
+</section>
+
+<section class="card rev">
+  <h2>The three phases</h2>
+  <p>The set is decided <em>before</em> you land. By the time your feet touch, everything that determines your height has already been set up.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 280" role="img" aria-label="Three phases of a set: before contact with arms locked by the ears and toes pointed, contact with the body vertical and hips neutral, and launch driving up through the ankles.">
+      <line x1="10" y1="238" x2="650" y2="238" stroke="#E4D3DE" stroke-width="3"/>
+      <g stroke="#2A1244" stroke-width="4.5" fill="none" stroke-linecap="round">
+        <circle cx="110" cy="104" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M110 116 L110 176"/><path d="M110 176 L110 216"/>
+        <path d="M110 122 L104 70"/><path d="M110 122 L116 70"/>
+        <path d="M110 216 L110 228"/>
+        <circle cx="330" cy="96" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M330 108 L330 166"/><path d="M330 166 L324 202 L330 238"/>
+        <path d="M330 114 L324 62"/><path d="M330 114 L336 62"/>
+        <circle cx="552" cy="72" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M552 84 L552 148"/><path d="M552 148 L552 200"/>
+        <path d="M552 90 L546 34"/><path d="M552 90 L558 34"/>
+        <path d="M552 200 L556 216"/>
+      </g>
+      <line x1="330" y1="52" x2="330" y2="238" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 6"/>
+      <path d="M600 190 L600 40" stroke="#FF2E7E" stroke-width="4" marker-end="url(#up)"/>
+      <defs><marker id="up" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#FF2E7E"/></marker></defs>
+      <g font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" text-anchor="middle">
+        <text x="110" y="264" fill="#FF2E7E">1 · BEFORE CONTACT</text>
+        <text x="330" y="264" fill="#FF2E7E">2 · CONTACT</text>
+        <text x="552" y="264" fill="#FF2E7E">3 · LAUNCH</text>
+      </g>
+    </svg>
+    <figcaption>Arms are already locked by the ears in phase 1 — not swung up after landing. The teal line in phase 2 shows the body staying close to vertical, head neutral.</figcaption>
+  </figure>
+  <h3>Phase 1 · Before contact</h3>
+  <p>Arms locked by the ears. Toes pointed down. Core braced. You are arriving already loaded.</p>
+  <h3>Phase 2 · Contact</h3>
+  <p>Hips neutral and tucked under. Body close to vertical, head neutral. The floor compresses under you.</p>
+  <h3>Phase 3 · Launch</h3>
+  <p>Drive through the ankles, violent shrug upward, body long and tight. The floor returns what you gave it.</p>
+</section>
+
+<section class="card rev">
+  <h2>The half-second that decides everything</h2>
+  <p>Between landing and leaving, one of two things happens.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="Comparison of contact time. A long soft contact returns little height. A short stiff contact returns much more.">
+      <text x="20" y="26" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#E5344E">Long, soft contact</text>
+      <rect x="20" y="38" width="380" height="26" rx="13" fill="#FFE4EB"/>
+      <rect x="20" y="38" width="380" height="26" rx="13" fill="none" stroke="#E5344E" stroke-width="2.5"/>
+      <text x="210" y="57" font-family="DM Sans,sans-serif" font-size="13.5" fill="#E5344E" text-anchor="middle" font-weight="700">energy sinks into the mat</text>
+      <path d="M430 60 L430 34" stroke="#E5344E" stroke-width="4" marker-end="url(#u2)"/>
+      <text x="470" y="58" font-family="DM Sans,sans-serif" font-size="13.5" fill="#8B8398">low return</text>
+      <text x="20" y="122" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00A88A">Short, stiff contact</text>
+      <rect x="20" y="134" width="120" height="26" rx="13" fill="#D9F4EE"/>
+      <rect x="20" y="134" width="120" height="26" rx="13" fill="none" stroke="#00A88A" stroke-width="2.5"/>
+      <text x="80" y="153" font-family="DM Sans,sans-serif" font-size="13.5" fill="#00A88A" text-anchor="middle" font-weight="700">pop</text>
+      <path d="M175 156 L175 82" stroke="#00A88A" stroke-width="4" marker-end="url(#u3)"/>
+      <text x="215" y="120" font-family="DM Sans,sans-serif" font-size="13.5" fill="#8B8398">high return</text>
+      <defs>
+        <marker id="u2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#E5344E"/></marker>
+        <marker id="u3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#00A88A"/></marker>
+      </defs>
+    </svg>
+    <figcaption>Bar length is time on the floor. Deep knee bend and a slow, squishy contact drains the energy. Stiff and fast gives it back.</figcaption>
+  </figure>
+  <p>The cue is <strong>pop</strong>, not <strong>push</strong>. And because this is a nervous-system skill rather than a strength one, it improves faster than most athletes expect — as long as the reps stay fresh.</p>
+</section>
+
+<section class="card rev">
+  <h2>The hollow body rule</h2>
+  <p>Arching the back during a set sends energy backward instead of upward.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 230" role="img" aria-label="Arched set sending force backward compared with a hollow, long set sending force straight up.">
+      <line x1="10" y1="196" x2="650" y2="196" stroke="#E4D3DE" stroke-width="3"/>
+      <path d="M150 186 Q168 110 148 44" stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="146" cy="36" r="12" fill="#E5344E"/>
+      <path d="M196 96 L268 56" stroke="#E5344E" stroke-width="4" marker-end="url(#b1)"/>
+      <text x="150" y="222" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Arched — goes backward</text>
+      <path d="M470 186 L470 44" stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="470" cy="36" r="12" fill="#00A88A"/>
+      <path d="M520 130 L520 44" stroke="#00A88A" stroke-width="4" marker-end="url(#b2)"/>
+      <text x="470" y="222" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Hollow — goes up</text>
+      <defs>
+        <marker id="b1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#E5344E"/></marker>
+        <marker id="b2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#00A88A"/></marker>
+      </defs>
+    </svg>
+    <figcaption>Ribs down, stomach tight, body long. Same shape as everything else in this classroom.</figcaption>
+  </figure>
+</section>
+
+<section class="card step rev">
+  <div class="num">1</div>
+  <span class="tag">Foundation</span>
+  <h2>Rebound &amp; stick</h2>
+  <p>Small explosive vertical jump driving through the balls of the feet. Arms shoot straight up and lock by the ears. Land soft and hold it completely frozen.</p>
+  <div class="rule"><b>Golden rule</b>The landing must be silent. A stomp means the core isn't braced.</div>
+  <label class="drill"><input type="checkbox" data-d="r1"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Rebound + 3-second stick</strong><span>Sets of 3–5 quality reps, then rest.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">2</div>
+  <span class="tag">Shape</span>
+  <h2>Rebound → tuck → stick</h2>
+  <p>Same rebound. At the absolute peak, drive the knees to the chest into a tight tuck, then snap straight and stick the landing.</p>
+  <div class="rule"><b>Golden rule</b>Knees to chest, never chest to knees. The upper body stays tall.</div>
+  <label class="drill"><input type="checkbox" data-d="r2"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Tuck rebound</strong><span>Sets of 3–5. Stop when the chest starts dropping.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">3</div>
+  <span class="tag">Speed</span>
+  <h2>Power hurdle rebound</h2>
+  <p>Sharp, aggressive hurdle into a tight two-foot landing. The instant the feet touch, redirect all that forward speed straight up into a maximal vertical rebound.</p>
+  <div class="rule"><b>Golden rule</b>Contact time as short as you can make it. Snap and pop — no settling, no gathering.</div>
+  <label class="drill"><input type="checkbox" data-d="r3"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Hurdle to vertical rebound</strong><span>Sets of 3–5. Quality drops fast on this one.</span></span></label>
+</section>
+
+<section class="card rev">
+  <h2>Trouble-shooter</h2>
+  <div class="prob"><b>Loud, stomping landings</b><span>Core isn't braced on contact. <em>→ Back to Level 1, silent reps only.</em></span></div>
+  <div class="prob"><b>Arms swing up after landing</b><span>Too late — the set is already gone. <em>→ Arms locked by the ears before the feet touch.</em></span></div>
+  <div class="prob"><b>Deep knee bend, no height</b><span>Contact time too long, energy absorbed. <em>→ Shorter, stiffer contact. Think pop.</em></span></div>
+  <div class="prob"><b>Travelling backward instead of up</b><span>Arching through the set. <em>→ Ribs down, body long.</em></span></div>
+  <div class="prob"><b>Chest folding to meet the knees</b><span>Tuck is being made by collapsing. <em>→ Knees come up. Chest stays tall.</em></span></div>
+</section>
+
+<section class="card danger rev">
+  <h2>Safety standards</h2>
+  <p><strong>Surface matters more here than almost anywhere.</strong> Spring floors, air tracks, or high-density panel mats only. Never concrete. Never thin, low-density foam.</p>
+  <p>High-velocity rebounding loads the ankles, calves and Achilles hard. <strong>Warm up properly</strong> — cold calves plus maximal rebounding is how tendons get hurt.</p>
+  <p>Keep it to <strong>3–5 quality reps per set</strong>, then rest. This is nervous-system work. Tired reps aren't just useless, they're where the injuries happen.</p>
+  <p>Heel pain in a still-growing athlete is common with repeated impact and is a stop-and-report — never something to push through.</p>
+</section>
+
+<div class="tracker">
+  <b id="cnt">0/3</b>
+  <span id="msg">Tick a level when it's clean. Saved on this device.</span>
+  <button id="rst" type="button">Reset</button>
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+  <p>Jump-versus-rebound framing from <a href="https://tumblingcoach.com/blog/beginner-circuit/">TumblingCoach</a>.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  var boxes=[].slice.call(document.querySelectorAll('.drill input')),
+      cnt=document.getElementById('cnt'),msg=document.getElementById('msg'),KEY='rebound-drills';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  function paint(){var n=boxes.filter(function(x){return x.checked}).length;
+    cnt.textContent=n+'/'+boxes.length;
+    msg.textContent = n===0?'Tick a level when it\u2019s clean. Saved on this device.'
+      : n<boxes.length?'Good. '+(boxes.length-n)+' level'+(boxes.length-n>1?'s':'')+' to go.'
+      : 'All three clean. Take it to your coach.';}
+  var st=load();
+  boxes.forEach(function(x){if(st[x.dataset.d])x.checked=true;
+    x.addEventListener('change',function(){var s=load();s[x.dataset.d]=x.checked;save(s);paint();});});
+  paint();
+  document.getElementById('rst').addEventListener('click',function(){
+    boxes.forEach(function(x){x.checked=false});save({});paint();});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  } else {document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
