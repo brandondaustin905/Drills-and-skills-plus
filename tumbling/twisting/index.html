@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Twisting &amp; Rotational Awareness — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 30px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(40px,12vw,62px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}.danger strong{color:#FFD9E3}
+.step{position:relative;padding-top:30px}
+.num{position:absolute;top:-16px;left:22px;min-width:46px;height:46px;padding:0 10px;border-radius:14px;background:var(--hot);color:#fff;
+  font-family:Anton,sans-serif;font-size:20px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.drill{display:flex;gap:13px;align-items:flex-start;background:#FDFAFC;border:1.5px solid var(--line);border-radius:14px;padding:14px;margin:12px 0 0;cursor:pointer;transition:.18s;user-select:none}
+.drill:hover{border-color:var(--hot)}
+.drill input{position:absolute;opacity:0;pointer-events:none}
+.tick{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #D9C4D3;background:#fff;display:grid;place-items:center;margin-top:2px;transition:.18s}
+.tick svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.18s}
+.drill input:checked ~ .tick{background:var(--teal);border-color:var(--teal)}
+.drill input:checked ~ .tick svg{opacity:1;transform:scale(1)}
+.drill input:checked ~ .dt{color:#9A93A6}
+.drill input:focus-visible ~ .tick{outline:3px solid var(--hot);outline-offset:2px}
+.dt strong{display:block;color:var(--grape);font-size:16px;margin-bottom:2px}
+.dt span{font-size:14.5px}
+.tracker{position:sticky;bottom:14px;z-index:50;background:var(--grape);color:#fff;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 10px 30px rgba(42,18,68,.3)}
+.tracker b{font-family:Anton,sans-serif;font-size:26px;line-height:1}
+.tracker span{font-size:13.5px;line-height:1.35;opacity:.9}
+.tracker button{margin-left:auto;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.vid{position:relative;padding-bottom:56.25%;border-radius:16px;overflow:hidden;margin:16px 0}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.prob{border-left:4px solid var(--hot);background:#FFF7FA;border-radius:0 12px 12px 0;padding:13px 16px;margin:11px 0}
+.prob b{display:block;color:var(--grape);font-size:16px}
+.prob span{font-size:14.5px}
+.prob em{font-style:normal;color:var(--teal);font-weight:700}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 03</span>
+  <h1>Twisting<br>&amp; the <em>Axis</em></h1>
+  <p class="dek">Not throwing yourself into the air and hoping. A tight line, a fixed reference point, and the ability to stop exactly where you meant to.</p>
+  <div class="chips"><span class="chip">⏱ 8 min read</span><span class="chip">🎯 Awareness drill</span><span class="chip">🏟 Mats required</span></div>
+</header>
+
+<section class="card quote rev">
+  <h2>Why the standing twist exists</h2>
+  <p>Before twisting goes into a skill, it goes on the floor as a body-awareness drill.</p>
+  <p>The goal is simple and brutal: <strong>land exactly how you started.</strong> Feet together, body tight and straight, perfectly aligned along the long axis — the imaginary line running from your head to your toes.</p>
+  <p>What it builds is the ability to not get directionally lost in the air. Everything else on this page serves that.</p>
+</section>
+
+<section class="card rev">
+  <h2>The three phases</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 280" role="img" aria-label="Three phases of a twist: tall set with arms tight to the midline, rotation around a vertical axis, then a square balanced landing.">
+      <line x1="10" y1="238" x2="650" y2="238" stroke="#E4D3DE" stroke-width="3"/>
+      <g stroke="#2A1244" stroke-width="4.5" fill="none" stroke-linecap="round">
+        <circle cx="110" cy="80" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M110 92 L110 172"/><path d="M110 172 L110 216"/>
+        <path d="M96 118 L124 118"/>
+        <circle cx="330" cy="72" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M330 84 L330 164"/><path d="M330 164 L330 208"/>
+        <path d="M316 110 L344 110"/>
+        <circle cx="552" cy="96" r="12" fill="#2A1244" stroke="none"/>
+        <path d="M552 108 L552 176"/><path d="M552 176 L544 210 L548 238"/>
+        <path d="M552 176 L560 210 L556 238"/>
+      </g>
+      <line x1="330" y1="40" x2="330" y2="238" stroke="#00A88A" stroke-width="2.5" stroke-dasharray="7 6"/>
+      <path d="M370 96 a52 22 0 1 1 -74 26" stroke="#FF2E7E" stroke-width="3.5" fill="none" marker-end="url(#sp)"/>
+      <defs><marker id="sp" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#FF2E7E"/></marker></defs>
+      <text x="330" y="34" font-family="DM Sans,sans-serif" font-size="12.5" font-weight="700" fill="#00A88A" text-anchor="middle">VERTICAL AXIS</text>
+      <g font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" text-anchor="middle" fill="#FF2E7E">
+        <text x="110" y="266">1 · SET &amp; LAUNCH</text>
+        <text x="330" y="266">2 · ROTATE</text>
+        <text x="552" y="266">3 · BREAK</text>
+      </g>
+    </svg>
+    <figcaption>The whole body turns as one cylinder around the teal line. Any break in that line slows the spin.</figcaption>
+  </figure>
+  <h3>Set &amp; launch</h3><p>Vertical extension to the peak. Arms tight to the midline. One rigid piece.</p>
+  <h3>Rotate</h3><p>Everything turns together. Hips and shoulders as a single unit.</p>
+  <h3>Break</h3><p>Sharp, deliberate stop. Square landing. Core locked to absorb the rotation.</p>
+</section>
+
+<section class="card rev">
+  <h2>On axis vs off axis</h2>
+  <p>This is the whole game, and it's the thing athletes cannot feel from the inside.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 250" role="img" aria-label="A tilted body twisting off its vertical axis compared with a straight body twisting cleanly on axis.">
+      <line x1="10" y1="212" x2="650" y2="212" stroke="#E4D3DE" stroke-width="3"/>
+      <line x1="160" y1="30" x2="160" y2="212" stroke="#C9BFD6" stroke-width="2" stroke-dasharray="6 6"/>
+      <g stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="126" cy="54" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M130 66 L182 196"/>
+      </g>
+      <path d="M196 84 a46 20 0 1 1 -64 24" stroke="#E5344E" stroke-width="3" fill="none"/>
+      <text x="160" y="240" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Shoulder dips — off axis</text>
+      <line x1="490" y1="30" x2="490" y2="212" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 6"/>
+      <g stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="490" cy="54" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M490 66 L490 196"/>
+      </g>
+      <path d="M528 84 a44 19 0 1 1 -62 22" stroke="#00A88A" stroke-width="3" fill="none"/>
+      <text x="490" y="240" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Straight — on axis</text>
+    </svg>
+    <figcaption>Leaning or dipping to force the twist tilts the axis. The spin goes crooked, the landing arrives somewhere you didn't plan for, and the knees pay.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>Tight equals fast</h2>
+  <p>Your rotation speed is set by how close your mass sits to the axis. Nothing to do with effort.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Arms held wide produce a slow spin. Arms pinned tight to the midline produce a fast spin.">
+      <g stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="160" cy="52" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M160 64 L160 168"/>
+        <path d="M160 92 L94 66"/><path d="M160 92 L226 66"/>
+      </g>
+      <path d="M232 128 a72 26 0 1 1 -104 30" stroke="#E5344E" stroke-width="3" fill="none"/>
+      <text x="160" y="204" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Arms wide — slow</text>
+      <g stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="490" cy="52" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M490 64 L490 168"/>
+        <path d="M490 92 L470 118"/><path d="M490 92 L510 118"/>
+      </g>
+      <path d="M524 134 a36 15 0 1 1 -52 16" stroke="#00A88A" stroke-width="3.5" fill="none"/>
+      <text x="490" y="204" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Arms tight — fast</text>
+    </svg>
+    <figcaption>Same athlete, same effort, different spin rate. If the roller drifts off your chest, you've just slowed yourself down.</figcaption>
+  </figure>
+  <h3>And move as one piece</h3>
+  <p>The common fault is twisting the top half and bottom half separately — wringing yourself out like a towel. Hips and shoulders go together or the axis breaks.</p>
+  <p>Worth knowing: in a standing full, the rotation is driven from the <strong>hips</strong>, not the shoulders. Athletes who try to turn using only their shoulders don't make it all the way round.</p>
+</section>
+
+<section class="card rev">
+  <h2>What your eyes do</h2>
+  <p>"Spot a marker" is too vague to act on. Trampoline coaches teach three specific checkpoints:</p>
+  <p><strong>1 · Takeoff</strong> — spot the wall in front of you.<br>
+  <strong>2 · Going up</strong> — spot the ceiling, and hold it. This keeps your head neutral and your chin tucked, and it forces you to wait until your legs are above your head before twisting.<br>
+  <strong>3 · Twisting</strong> — spot the floor.</p>
+  <p><strong>What it isn't:</strong> a head-snapping exercise. Throwing the head is one of the fastest ways off axis. The eyes work. The head stays with the body.</p>
+</section>
+
+<section class="card step rev">
+  <div class="num">¼</div>
+  <span class="tag">Connection</span>
+  <h2>Quarter-twist sync</h2>
+  <p>Stand tall, foam roller held horizontally against the centre of your chest with both hands. Small controlled vertical jump, sharp 90-degree twist.</p>
+  <div class="rule"><b>Golden rule</b>The roller stays centred on the chest. If it turns faster than your chest or lags behind it, your core is disconnected. Land square and frozen.</div>
+  <label class="drill"><input type="checkbox" data-d="t1"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Quarter twist, both directions</strong><span>Sets of 4–6. Frozen landing every rep.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">½</div>
+  <span class="tag">Power</span>
+  <h2>Half-twist freeze</h2>
+  <p>Same posture, more drive. Off the balls of the feet into a straight vertical jump, snap a 180 in the air, spine rigid throughout.</p>
+  <div class="rule"><b>Golden rule</b>Eyes find the new landing space. The head stays with the body — it doesn't lead and it doesn't throw. Land soft, hold 3 seconds.</div>
+  <label class="drill"><input type="checkbox" data-d="t2"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Half twist, both directions</strong><span>Sets of 4–6. Stop when the landings stop being square.</span></span></label>
+</section>
+
+<section class="card step rev">
+  <div class="num">1/1</div>
+  <span class="tag">Full</span>
+  <h2>Full rotation</h2>
+  <p>Explosive vertical jump, roller locked to the midline, building toward a continuous 360.</p>
+  <div class="rule"><b>Golden rule</b>No leaning, no dipping a shoulder to force it round. Straight up and down on a vertical axis.</div>
+  <label class="drill"><input type="checkbox" data-d="t3"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Full twist, both directions</strong><span>Sets of 4–6.</span></span></label>
+  <label class="drill"><input type="checkbox" data-d="t4"><span class="tick"><svg viewBox="0 0 16 16"><path d="M2 8.5 L6 12.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="dt"><strong>Repeat all three with arms overhead</strong><span>Once the roller version is clean. That's the shape a twisting layout actually uses, and it's harder without the roller as a reference.</span></span></label>
+</section>
+
+<section class="card rev">
+  <h2>Trouble-shooter</h2>
+  <div class="prob"><b>Landing turned, not square</b><span>Twist didn't stop — no deliberate break. <em>→ Drop back a level, freeze every landing.</em></span></div>
+  <div class="prob"><b>Roller drifts off the chest</b><span>Arms disconnecting from the core, spin slows. <em>→ Pin it to the midline, smaller jump.</em></span></div>
+  <div class="prob"><b>Roller turns before the chest does</b><span>Upper and lower body separating. <em>→ Move as one unit. Back to quarters.</em></span></div>
+  <div class="prob"><b>Shoulder dips into the twist</b><span>Off axis. Everything downstream goes crooked. <em>→ Stay tall, twist smaller.</em></span></div>
+  <div class="prob"><b>Head thrown around</b><span>Fastest route off axis there is. <em>→ Eyes work, head doesn't.</em></span></div>
+  <div class="prob"><b>Only twists one way</b><span>Untrained direction becomes a real problem later. <em>→ Both directions, every session.</em></span></div>
+</section>
+
+<section class="card rev">
+  <h2>Where this leads</h2>
+  <p>These drills are groundwork. Before a full-twisting layout is even on the table, coaches look for a high back layout that's tight and straight the whole way — neither arched nor curved, straight like a yardstick — plus a range of basic twisting skills like cat twists, log rolls and jump full turns.</p>
+  <p>Two things that seem to contradict each other but don't:</p>
+  <p>For a <strong>back-full</strong>, twisting early is simply a badly executed one. There is no such thing as an early-twisting strategy.</p>
+  <p>For a <strong>standing full</strong>, most do twist early and that's accepted — the skill breaks several normal tumbling rules, which is exactly why coaches warn it can damage habits built for running passes.</p>
+  <p>Different skills, different rules. Ask your coach which one you're actually training.</p>
+  <div class="vid">
+    <iframe src="https://www.youtube.com/embed/hfsgFaYdDhc" title="Twisting skills used before learning the back-full — USA Trampoline &amp; Tumbling Academy" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p style="font-size:14.5px">USA Trampoline &amp; Tumbling Academy — twisting skills used as preparation before the back-full.</p>
+</section>
+
+<section class="card danger rev">
+  <h2>Safety standards</h2>
+  <p><strong>Film these.</strong> Alignment errors are nearly invisible from the inside and obvious on video. Catching them early is the entire point of the drill.</p>
+  <p>High-density panel mats or air tracks. <strong>Never slick or hard surfaces</strong> — an unstable landing out of a twist is how ankles roll and knees get strained. Extra matting genuinely lowers the risk here.</p>
+  <p><strong>Sets of 4–6.</strong> This is a mental-focus drill. Once spatial tracking degrades the reps are worthless and the landings get sloppy.</p>
+  <p>These are floor drills. A full-twisting layout is a complex skill that <strong>requires professional coaching</strong> — nothing on this page replaces that.</p>
+</section>
+
+<div class="tracker">
+  <b id="cnt">0/4</b>
+  <span id="msg">Tick a level when it's clean both ways. Saved on this device.</span>
+  <button id="rst" type="button">Reset</button>
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+  <p>Sighting checkpoints and prerequisites from <a href="https://usatrampolineacademy.com/full-twisting-layout-drills/">USA Trampoline &amp; Tumbling Academy</a>. Hip-initiated rotation from <a href="https://tumblingcoach.com/blog/standing-full/">Coach Sahil, TumblingCoach</a>. Standing-twist drill purpose from <a href="https://en.wikipedia.org/wiki/Full_twisting_layout">Wikipedia</a>.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  var boxes=[].slice.call(document.querySelectorAll('.drill input')),
+      cnt=document.getElementById('cnt'),msg=document.getElementById('msg'),KEY='twist-drills';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  function paint(){var n=boxes.filter(function(x){return x.checked}).length;
+    cnt.textContent=n+'/'+boxes.length;
+    msg.textContent=n===0?'Tick a level when it\u2019s clean both ways. Saved on this device.'
+      :n<boxes.length?'Good. '+(boxes.length-n)+' to go.'
+      :'All clean. Take it to your coach.';}
+  var st=load();
+  boxes.forEach(function(x){if(st[x.dataset.d])x.checked=true;
+    x.addEventListener('change',function(){var s=load();s[x.dataset.d]=x.checked;save(s);paint();});});
+  paint();
+  document.getElementById('rst').addEventListener('click',function(){
+    boxes.forEach(function(x){x.checked=false});save({});paint();});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
