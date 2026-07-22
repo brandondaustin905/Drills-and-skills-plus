@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Jump Combos &amp; Integration — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;--violet:#8B5CB8;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 26px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16.5px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}.danger strong{color:#FFD9E3}
+.stage{position:relative;padding-top:30px}
+.sn{position:absolute;top:-16px;left:22px;padding:0 13px;height:44px;border-radius:13px;background:var(--hot);color:#fff;
+  font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.bad{background:#FFF7FA;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:11px 14px;margin-top:12px;font-size:15px}
+.bad b{color:#B0122C;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · The Jump Laboratory 05</span>
+  <h1>Jump<br><em>Combos</em></h1>
+  <p class="dek">The transition isn't the gap between skills. It's the skill judges are scoring.</p>
+  <div class="chips"><span class="chip">⏱ 6 min read</span><span class="chip">🔗 Connection focus</span><span class="chip">🏆 Routine-level</span></div>
+</header>
+
+<section class="card quote rev">
+  <h2>The one idea this turns on</h2>
+  <p>Judges don't score your jumps and your transitions separately. They see <strong>one continuous thing</strong>.</p>
+  <p>So the moment between two jumps isn't a rest — it's a scored part of the skill. Most athletes train the jumps and ignore the connective tissue, then wonder why their combo scores lower than their individual jumps.</p>
+  <p><strong>The transition is the skill.</strong> Everything below follows from that.</p>
+</section>
+
+<section class="card rev">
+  <h2>Where combos are won and lost</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="Three jumps connected by two transitions. The jumps are marked as trained, the transitions as the neglected part where points are lost.">
+      <g font-family="DM Sans,sans-serif">
+        <circle cx="90" cy="80" r="42" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="90" y="76" font-size="13" font-weight="700" fill="#00745F" text-anchor="middle">TOE</text>
+        <text x="90" y="93" font-size="13" font-weight="700" fill="#00745F" text-anchor="middle">TOUCH</text>
+        <circle cx="330" cy="80" r="42" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="330" y="85" font-size="13" font-weight="700" fill="#00745F" text-anchor="middle">PIKE</text>
+        <circle cx="570" cy="80" r="42" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="570" y="85" font-size="13" font-weight="700" fill="#00745F" text-anchor="middle">HURDLER</text>
+        <path d="M138 80 L282 80" stroke="#FF2E7E" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <path d="M378 80 L522 80" stroke="#FF2E7E" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <circle cx="210" cy="80" r="20" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="210" y="85" font-size="16" font-weight="700" fill="#FF2E7E" text-anchor="middle">?</text>
+        <circle cx="450" cy="80" r="20" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="450" y="85" font-size="16" font-weight="700" fill="#FF2E7E" text-anchor="middle">?</text>
+        <text x="210" y="150" font-size="12.5" font-weight="700" fill="#FF2E7E" text-anchor="middle">transition 1</text>
+        <text x="450" y="150" font-size="12.5" font-weight="700" fill="#FF2E7E" text-anchor="middle">transition 2</text>
+        <text x="330" y="180" font-size="13.5" fill="#7A7288" text-anchor="middle">Everyone trains the circles. The score lives in the pink.</text>
+      </g>
+    </svg>
+    <figcaption>The jumps you've already drilled. The two transitions are what turns three good jumps into one good combo — or three good jumps into a messy one.</figcaption>
+  </figure>
+  <p>Training skills one at a time doesn't prepare you to do them in a row, under fatigue, with the timing of one bleeding into the next. Combos train the switch itself: staying clean while moving, not just while standing still.</p>
+</section>
+
+<section class="card rev">
+  <h2>The worked example</h2>
+  <p><strong>Toe touch → pike → hurdler.</strong> Three jumps, two transitions — and the transitions are where the lesson lives.</p>
+  <p>The jumps themselves you already have from the technique lesson: toe touch wants width and lift, pike wants straight legs and a fast hip fold, hurdler adds asymmetry so both sides need working evenly. What's new is what happens <em>between</em> them.</p>
+  <h3>Transition 1 · toe touch → pike</h3>
+  <p>Land the toe touch balanced, then instantly: posture tall, core re-tightened, arms already moving toward the pike prep. No pause to gather. The landing of jump one <strong>is</strong> the prep for jump two.</p>
+  <h3>Transition 2 · pike → hurdler</h3>
+  <p>Same again — stable base, eyes forward, breathe, posture corrected, all in a fraction of a second. This is the one that breaks under fatigue, because it's last.</p>
+  <div class="rule"><b>The cue for both</b>Land loaded, not landed. You're arriving into the next jump, not finishing the previous one.</div>
+</section>
+
+<section class="card rev">
+  <h2>How to actually build a combo</h2>
+  <p>The order is fixed. Skip a stage and you reinforce whatever's broken, faster.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="Five-stage ladder: clean, connected slow, controlled, full speed, performance.">
+      <g font-family="DM Sans,sans-serif" font-size="13" font-weight="700">
+        <rect x="18" y="150" width="112" height="34" rx="9" fill="#D9F4EE" stroke="#00A88A" stroke-width="2"/>
+        <text x="74" y="172" fill="#00745F" text-anchor="middle">1 · Clean</text>
+        <rect x="140" y="118" width="112" height="34" rx="9" fill="#D9F4EE" stroke="#00A88A" stroke-width="2"/>
+        <text x="196" y="140" fill="#00745F" text-anchor="middle">2 · Connected</text>
+        <rect x="262" y="86" width="112" height="34" rx="9" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2"/>
+        <text x="318" y="108" fill="#7A5200" text-anchor="middle">3 · Controlled</text>
+        <rect x="384" y="54" width="112" height="34" rx="9" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2"/>
+        <text x="440" y="76" fill="#A3134E" text-anchor="middle">4 · Full speed</text>
+        <rect x="506" y="22" width="130" height="34" rx="9" fill="#EFE2F8" stroke="#8B5CB8" stroke-width="2"/>
+        <text x="571" y="44" fill="#5B2178" text-anchor="middle">5 · Performance</text>
+      </g>
+    </svg>
+    <figcaption>Clean, then connected, then controlled, then fast, then performance. In that order, every time.</figcaption>
+  </figure>
+  <p><strong>1 · Clean.</strong> Each jump alone, slow, perfect. A messy single jump has no chance in a combo.</p>
+  <p><strong>2 · Connected slow.</strong> Link them at half speed. A full stop-and-reset between jumps is fine here — you're learning the sequence, not the tempo.</p>
+  <p><strong>3 · Controlled.</strong> Shrink the pause. The reset gets faster and tighter but stays deliberate. The transition becomes a skill instead of a gap.</p>
+  <p><strong>4 · Full speed.</strong> Only now. Real tempo, landing loaded into each next jump.</p>
+  <p><strong>5 · Performance.</strong> Under fatigue, on count, synced with the team, arms added between jumps.</p>
+</section>
+
+<section class="card rev">
+  <h2>Why speed comes last</h2>
+  <p>Accuracy is built before speed — one of the most consistent findings in how people learn movement.</p>
+  <p>Rush a combo early and you don't just get a messy rep, you <strong>train</strong> the messy rep. The sloppy landing, the slow reset, the dropped chest all get wired in, and then you spend months unlearning them.</p>
+  <div class="rule"><b>The trade</b>Slow reps feel less impressive and produce a better combo. Every time.</div>
+</section>
+
+<section class="card rev">
+  <h2>The three things that break combos</h2>
+  <div class="bad"><b>Treating each jump as separate</b>The root of all the others. "Jump, then jump, then jump" instead of one connected phrase — and every transition gets neglected.</div>
+  <div class="bad"><b>Landings you check out of</b>Every landing is a setup. A landing you've mentally left is a bad prep for the next jump.</div>
+  <div class="bad"><b>Fatigue collapse</b>Chest drops, posture goes, reset slows — and it hits the last jump hardest. Which is exactly why you train combos tired on purpose.</div>
+</section>
+
+<section class="card rev">
+  <h2>Training it tired — on purpose</h2>
+  <p>Once a combo is clean and fast when you're fresh, the last step is making it survive when you're not.</p>
+  <p>Do your combos <strong>after</strong> a conditioning circuit or a hard section, when the legs are heavy and the reset wants to get lazy. That's competition condition. A combo that only looks good fresh isn't ready.</p>
+  <div class="rule"><b>The line</b>Fatigue is the training tool. Form breakdown is the stop signal. When the shape genuinely falls apart, the set is done — you're now training the collapse.</div>
+</section>
+
+<section class="card rev">
+  <h2>Where this shows up</h2>
+  <p>A clean combo isn't just a jump section. The same skill — moving between elements without stopping — carries into dance transitions, tumbling setups and stunt timing.</p>
+  <p>Athletes who own integration look more polished for one specific reason: their movement never visibly stops. That continuous quality is a big part of what reads as elite from the floor.</p>
+</section>
+
+<section class="card danger rev">
+  <h2>Safety</h2>
+  <p><strong>Warm up first</strong> — combos are more demanding than single jumps.</p>
+  <p><strong>Land soft every rep.</strong> Repeated hard landings add up fast on knees and ankles.</p>
+  <p><strong>Don't grind endless jumps without recovery.</strong> Quality over count, always.</p>
+  <p><strong>Stop when form breaks</strong>, not when the reps run out. Controlled fatigue is useful; lost technique is just risk.</p>
+  <p>For growing athletes, keep combo volume modest and take knee or heel pain seriously.</p>
+</section>
+
+<section class="card rev">
+  <h2>For parents and coaches</h2>
+  <p>Combos look simple from outside and are one of the most demanding things in cheer — strength, flexibility, timing, coordination, endurance and focus, all at once, in sequence.</p>
+  <p>The most useful thing to reinforce: <strong>slow down and fix the transitions.</strong> Athletes want to speed up and add difficulty; the ones who get the connections clean first end up further ahead. Watch the moment <em>between</em> the jumps.</p>
+</section>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var pb=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    pb.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
