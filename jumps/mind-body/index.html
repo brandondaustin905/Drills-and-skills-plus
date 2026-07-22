@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Mind-Body Connection — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;--violet:#8B5CB8;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 130px}
+.hero{padding:54px 0 26px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16.5px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.tool{position:relative;padding-top:30px;scroll-margin-top:80px}
+.tool.live{outline:3px solid var(--hot);outline-offset:3px}
+.num{position:absolute;top:-16px;left:22px;padding:0 14px;height:44px;border-radius:13px;background:var(--hot);color:#fff;
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.bad{background:#FFF7FA;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:11px 14px;margin-top:12px;font-size:15px}
+.bad b{color:#B0122C;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.wk{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;margin-top:12px;font-size:15.5px}
+.wk div:nth-child(odd){font-weight:700;color:var(--grape);white-space:nowrap}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.launch{background:linear-gradient(135deg,#FF2E7E,#B8155B);color:#fff;text-align:center}
+.launch h2{color:#fff;font-size:26px}.launch p{color:#FFE0EC}
+.go{display:inline-block;background:#fff;color:#B8155B;border:0;border-radius:14px;padding:15px 30px;font:inherit;font-size:17px;font-weight:700;cursor:pointer;margin-top:6px;box-shadow:0 6px 18px rgba(0,0,0,.16)}
+.go:active{transform:translateY(1px)}
+.streak{margin-top:14px;font-size:14px;color:#FFD9E7}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--grape);color:#fff;
+  padding:14px 18px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(42,18,68,.35);
+  transform:translateY(115%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock .inner{max-width:604px;margin:0 auto}
+.dtop{display:flex;align-items:center;gap:14px}
+.ring{position:relative;flex:0 0 66px;height:66px}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:20px}
+.dname{font-size:17px;font-weight:700;line-height:1.25}
+.dnext{font-size:13px;opacity:.75;margin-top:2px}
+.dbtns{display:flex;gap:8px;margin-top:12px}
+.dbtns button{flex:1;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:11px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.dbtns button.prime{background:#fff;color:var(--grape)}
+.dbtns button.icon{flex:0 0 46px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.dock{transition:none}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · The Jump Laboratory 04</span>
+  <h1>Mind–Body<br><em>Connection</em></h1>
+  <p class="dek">How skills actually get built, and how you make them repeat identically when it counts.</p>
+  <div class="chips"><span class="chip">⏱ 6 min read</span><span class="chip">🧠 5–10 min sessions</span><span class="chip">🛌 Rest-day friendly</span></div>
+</header>
+
+<section class="card launch rev">
+  <h2>Guided rehearsal</h2>
+  <p>A timed 5-minute visualization walkthrough, phase by phase. Eyes closed, phone down.</p>
+  <button class="go" id="start" type="button">▶︎ Start rehearsal</button>
+  <div class="streak" id="streak"></div>
+</section>
+
+<section class="card quote rev">
+  <h2>What this lesson is — and isn't</h2>
+  <p>The Tumbling+ mental lesson is about <strong>fear</strong>: blocks, balking, getting a skill back when your body refuses.</p>
+  <p>This one is about <strong>learning</strong>: how skills get built in the first place, and how you make them repeat identically under pressure.</p>
+  <p>Different problems. Different tools.</p>
+</section>
+
+<section class="card rev">
+  <h2>Every skill starts in the brain</h2>
+  <p>Practise a movement repeatedly and your brain strengthens the pathways responsible for it. That's <strong>motor learning</strong>.</p>
+  <p>Each correct rep makes your nervous system better at recruiting the right muscles, timing when they fire, coordinating the pattern, and cutting wasted tension.</p>
+  <p>People call it muscle memory — but the muscles aren't remembering anything. The brain and nervous system are the ones adapting.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 230" role="img" aria-label="A beginner's movement signal is scattered and wasteful. A trained athlete's signal is direct and efficient.">
+      <g font-family="DM Sans,sans-serif">
+        <text x="165" y="34" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Untrained pattern</text>
+        <circle cx="60" cy="120" r="13" fill="#E5344E"/>
+        <circle cx="272" cy="120" r="13" fill="#E5344E"/>
+        <path d="M72 120 C110 60 130 176 168 82 C200 46 210 178 260 120" fill="none" stroke="#E5344E" stroke-width="3.5"/>
+        <text x="165" y="200" font-size="12.5" fill="#7A7288" text-anchor="middle">wasted effort, extra tension</text>
+        <text x="495" y="34" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Trained pattern</text>
+        <circle cx="390" cy="120" r="13" fill="#00A88A"/>
+        <circle cx="602" cy="120" r="13" fill="#00A88A"/>
+        <path d="M402 120 L590 120" fill="none" stroke="#00A88A" stroke-width="4.5"/>
+        <text x="495" y="200" font-size="12.5" fill="#7A7288" text-anchor="middle">less energy, same movement</text>
+      </g>
+    </svg>
+    <figcaption>Trained athletes use less energy for the same skill. The signal gets more precise, so less effort gets wasted.</figcaption>
+  </figure>
+  <div class="bad"><b>The catch</b>Correct repetition builds the pattern. <strong>Incorrect repetition builds one too</strong> — just the wrong one. Twenty rushed toe touches don't do nothing; they actively train a rushed toe touch.</div>
+</section>
+
+<section class="card tool rev" id="t1">
+  <div class="num">Tool 1</div>
+  <h2>Visualization</h2>
+  <p>Rehearsing a skill mentally, without moving. Doing it activates many of the same pathways your brain uses in actual performance.</p>
+  <h3>How to do it properly</h3>
+  <p>Eyes closed. Run the skill start to finish <strong>at real speed</strong> — no fast-forwarding through the hard part.</p>
+  <p>Focus on sharp arm placement, full extension, clean lines, a soft controlled landing.</p>
+  <p>And critically: <strong>imagine how it feels</strong>, not just how it looks. Imagining the sensation of a movement resembles real execution more closely than picturing it from the outside.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="External imagery is watching yourself from outside, useful for shape. Internal imagery is feeling it from inside, better for timing and rhythm.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="14" y="20" width="308" height="160" rx="16" fill="#EFE2F8" stroke="#8B5CB8" stroke-width="2.5"/>
+        <text x="168" y="56" font-size="16" font-weight="700" fill="#5B2178" text-anchor="middle">FROM OUTSIDE</text>
+        <text x="168" y="88" font-size="14" fill="#4A4358" text-anchor="middle">watching yourself perform</text>
+        <text x="168" y="122" font-size="14" font-weight="700" fill="#5B2178" text-anchor="middle">good for shape</text>
+        <text x="168" y="148" font-size="13" fill="#7A7288" text-anchor="middle">lines, positions, angles</text>
+        <rect x="338" y="20" width="308" height="160" rx="16" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="492" y="56" font-size="16" font-weight="700" fill="#00745F" text-anchor="middle">FROM INSIDE</text>
+        <text x="492" y="88" font-size="14" fill="#4A4358" text-anchor="middle">feeling yourself perform</text>
+        <text x="492" y="122" font-size="14" font-weight="700" fill="#00745F" text-anchor="middle">better for timing</text>
+        <text x="492" y="148" font-size="13" fill="#7A7288" text-anchor="middle">rhythm, effort, sensation</text>
+      </g>
+    </svg>
+    <figcaption>Use both. If you only do one, do the felt version — it's closer to what actually happens when you move.</figcaption>
+  </figure>
+  <div class="rule"><b>Dose</b>5–10 minutes, a few times a week. Consistency beats one long session.</div>
+  <div class="bad"><b>What it won't do</b>Replace physical reps. Visualization builds familiarity and sharpens patterns you already have. It doesn't install new ones from scratch.</div>
+</section>
+
+<section class="card tool rev" id="t2">
+  <div class="num">Tool 2</div>
+  <h2>Slow-motion reps</h2>
+  <p>Breaking a skill into phases and performing each deliberately, at a fraction of normal speed.</p>
+  <p><strong>Why it works:</strong> when you rush, your brain skips the small corrections. Slowing down forces attention onto every detail — improving awareness, coordination, timing, and how well the technique sticks.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Four phases of a toe touch: preparation, lift, peak, landing.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="12" y="44" width="148" height="104" rx="15" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="86" y="76" font-size="14" font-weight="700" fill="#A3134E" text-anchor="middle">1 · PREP</text>
+        <text x="86" y="102" font-size="12.5" fill="#7A7288" text-anchor="middle">tall posture</text>
+        <text x="86" y="120" font-size="12.5" fill="#7A7288" text-anchor="middle">arm swing</text>
+        <text x="86" y="138" font-size="12.5" fill="#7A7288" text-anchor="middle">core tight</text>
+        <rect x="176" y="44" width="148" height="104" rx="15" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2.5"/>
+        <text x="250" y="76" font-size="14" font-weight="700" fill="#7A5200" text-anchor="middle">2 · LIFT</text>
+        <text x="250" y="102" font-size="12.5" fill="#7A7288" text-anchor="middle">explosive but</text>
+        <text x="250" y="120" font-size="12.5" fill="#7A7288" text-anchor="middle">controlled</text>
+        <text x="250" y="138" font-size="12.5" fill="#7A7288" text-anchor="middle">hips open</text>
+        <rect x="340" y="44" width="148" height="104" rx="15" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="414" y="76" font-size="14" font-weight="700" fill="#00745F" text-anchor="middle">3 · PEAK</text>
+        <text x="414" y="102" font-size="12.5" fill="#7A7288" text-anchor="middle">max width</text>
+        <text x="414" y="120" font-size="12.5" fill="#7A7288" text-anchor="middle">knees straight</text>
+        <text x="414" y="138" font-size="12.5" fill="#7A7288" text-anchor="middle">chest lifted</text>
+        <rect x="504" y="44" width="144" height="104" rx="15" fill="#EFE2F8" stroke="#8B5CB8" stroke-width="2.5"/>
+        <text x="576" y="76" font-size="14" font-weight="700" fill="#5B2178" text-anchor="middle">4 · LAND</text>
+        <text x="576" y="102" font-size="12.5" fill="#7A7288" text-anchor="middle">soft knees</text>
+        <text x="576" y="120" font-size="12.5" fill="#7A7288" text-anchor="middle">absorb</text>
+        <text x="576" y="138" font-size="12.5" fill="#7A7288" text-anchor="middle">balanced</text>
+        <text x="330" y="190" font-size="13" fill="#7A7288" text-anchor="middle">Each phase alone → link two → link three → full speed.</text>
+      </g>
+    </svg>
+    <figcaption>Hold each phase for two seconds. Only go full speed once every phase is clean on its own.</figcaption>
+  </figure>
+  <div class="rule"><b>Dose</b>5–8 slow reps. This is precision work, not conditioning.</div>
+</section>
+
+<section class="card tool rev" id="t3">
+  <div class="num">Tool 3</div>
+  <h2>Breathing</h2>
+  <p>The rule that matters: <strong>don't hold your breath.</strong></p>
+  <p>Athletes under pressure hold their breath without noticing. It creates tension, burns energy and makes movement rigid — and it's a major reason technique degrades late in a routine.</p>
+  <p>A workable pattern for jumps: <strong>exhale through the lift, inhale on the landing and reset.</strong> Breathing out as you exert helps engage the deep core muscles that stabilise your trunk and transfer force between lower and upper body.</p>
+  <div class="rule"><b>Don't overthink it</b>Breathing continuously and rhythmically matters far more than any specific count.</div>
+</section>
+
+<section class="card rev">
+  <h2>Putting it together</h2>
+  <p>Athletes who perform identically under pressure train four things, not one:</p>
+  <p><strong>Physical repetition · Mental rehearsal · Controlled execution · Breath awareness</strong></p>
+  <p>That combination is what lets a skill hold up in practice, in a routine section, under fatigue, and on competition day.</p>
+</section>
+
+<section class="card rev">
+  <h2>Common mistakes</h2>
+  <p>Rushing through visualization. Treating mental training as optional. Doing slow reps without actually focusing. Holding your breath. Assuming physical reps are the only thing that counts. Skipping mental rehearsal on tired days — which are exactly the days it's most useful.</p>
+  <div class="bad"><b>The real one</b>Mental training only works when it's done with intention. Going through the motions of going through the motions does nothing.</div>
+</section>
+
+<section class="card rev">
+  <h2>When to use it</h2>
+  <p>Three to five times a week, 5–10 minutes.</p>
+  <div class="wk">
+    <div>Before practice</div><div>Visualization as a warm-up.</div>
+    <div>After practice</div><div>Slow-motion corrections while the skill is fresh.</div>
+    <div>Rest days</div><div>Mental rehearsal only, no load.</div>
+    <div>Before comp</div><div>Focus and confidence.</div>
+  </div>
+  <p style="margin-top:14px">Rest days are the underrated one. You can rehearse patterns without adding physical stress — genuinely useful when you're managing volume or working around an injury.</p>
+</section>
+
+<section class="card rev">
+  <h2>For parents and coaches</h2>
+  <p>Athletes underestimate mental training because it doesn't look like effort. It's standard practice in gymnastics, figure skating and Olympic programs.</p>
+  <p>Encourage athletes to understand what a movement should <strong>feel</strong> like, not just what it looks like. And the goal isn't a perfect session — it's repeating correct patterns until they run automatically.</p>
+</section>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+</footer>
+
+</div>
+
+<div class="dock" id="dock">
+  <div class="inner">
+    <div class="dtop">
+      <div class="ring">
+        <svg width="66" height="66" viewBox="0 0 66 66">
+          <circle cx="33" cy="33" r="28" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/>
+          <circle id="arc" cx="33" cy="33" r="28" fill="none" stroke="#FFC53D" stroke-width="6" stroke-linecap="round" stroke-dasharray="175.9" stroke-dashoffset="0"/>
+        </svg>
+        <b id="clock">—</b>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div class="dname" id="dname">Ready</div>
+        <div class="dnext" id="dnext"></div>
+      </div>
+    </div>
+    <div class="dbtns">
+      <button type="button" class="prime" id="pause">Pause</button>
+      <button type="button" id="skip">Next →</button>
+      <button type="button" class="icon" id="mute" aria-label="Mute">🔊</button>
+      <button type="button" class="icon" id="quit" aria-label="End">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pb=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    pb.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+
+  var SEQ=[
+    {n:'Settle',c:'Eyes closed. Breathe slowly. Let the gym noise go.',s:40,el:null},
+    {n:'Phase 1 · Prep',c:'Feel tall posture, the arm swing, the core tightening.',s:45,el:'t2'},
+    {n:'Phase 2 · Lift',c:'Feel the drive. Explosive but controlled.',s:45,el:'t2'},
+    {n:'Phase 3 · Peak',c:'Full width. Knees locked. Chest lifted.',s:45,el:'t2'},
+    {n:'Phase 4 · Landing',c:'Soft knees, absorbed, balanced, finished.',s:45,el:'t2'},
+    {n:'Full speed × 5',c:'Whole jump, real time, felt from inside. Five reps.',s:80,el:'t1'}
+  ];
+  var CIRC=175.9,i=-1,left=0,tick=null,paused=false,muted=false,ac=null;
+  var dock=document.getElementById('dock'),clock=document.getElementById('clock'),
+      arc=document.getElementById('arc'),dn=document.getElementById('dname'),
+      dx=document.getElementById('dnext'),pauseB=document.getElementById('pause'),
+      streakEl=document.getElementById('streak');
+
+  function beep(hz,ms){
+    if(muted)return;
+    try{
+      ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+      var o=ac.createOscillator(),g=ac.createGain();
+      o.connect(g);g.connect(ac.destination);o.frequency.value=hz;o.type='sine';
+      g.gain.setValueAtTime(.14,ac.currentTime);
+      g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+ms/1000);
+      o.start();o.stop(ac.currentTime+ms/1000);
+    }catch(e){}
+  }
+  function fmt(s){var m=Math.floor(s/60);return m?m+':'+String(s%60).padStart(2,'0'):String(s)}
+  function highlight(id){
+    document.querySelectorAll('.tool').forEach(function(e){e.classList.remove('live')});
+    if(!id)return;
+    var el=document.getElementById(id);
+    if(el){el.classList.add('live')}
+  }
+  function render(){
+    var st=SEQ[i];
+    dn.textContent=st.n;
+    dx.textContent=(i<SEQ.length-1?'Next · '+SEQ[i+1].n:'Last one')+' — '+st.c;
+    clock.textContent=fmt(left);
+    arc.style.strokeDashoffset=CIRC*(1-left/st.s);
+    pauseB.textContent=paused?'Resume':'Pause';
+  }
+  function go(n){
+    clearInterval(tick);i=n;
+    if(i>=SEQ.length){finish();return}
+    var st=SEQ[i];left=st.s;paused=false;highlight(st.el);render();
+    tick=setInterval(function(){
+      if(paused)return;
+      left--;
+      if(left<=0){beep(880,220);clearInterval(tick);setTimeout(function(){go(i+1)},400);return}
+      render();
+    },1000);
+  }
+  function finish(){
+    clearInterval(tick);dock.classList.remove('on');
+    document.querySelectorAll('.tool').forEach(function(e){e.classList.remove('live')});
+    beep(880,180);setTimeout(function(){beep(1180,300)},200);
+    try{
+      var d=JSON.parse(localStorage.getItem('mb-log')||'{"n":0,"last":""}');
+      var today=new Date().toISOString().slice(0,10);
+      if(d.last!==today){d.n++;d.last=today;localStorage.setItem('mb-log',JSON.stringify(d))}
+    }catch(e){}
+    showStreak(true);
+    document.getElementById('start').textContent='▶︎ Run it again';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function showStreak(justDone){
+    try{
+      var d=JSON.parse(localStorage.getItem('mb-log')||'{"n":0,"last":""}');
+      if(!d.n){streakEl.textContent='';return}
+      var today=new Date().toISOString().slice(0,10);
+      streakEl.textContent=(justDone?'Done. ':'')+d.n+' session'+(d.n>1?'s':'')+' logged'+
+        (d.last===today?' · today ✓':'');
+    }catch(e){}
+  }
+  document.getElementById('start').addEventListener('click',function(){
+    dock.classList.add('on');beep(700,120);go(0);
+  });
+  pauseB.addEventListener('click',function(){paused=!paused;render()});
+  document.getElementById('skip').addEventListener('click',function(){go(i+1)});
+  document.getElementById('quit').addEventListener('click',function(){
+    clearInterval(tick);dock.classList.remove('on');
+    document.querySelectorAll('.tool').forEach(function(e){e.classList.remove('live')});
+  });
+  document.getElementById('mute').addEventListener('click',function(){
+    muted=!muted;this.textContent=muted?'🔇':'🔊';
+  });
+  showStreak(false);
+})();
+</script>
+</body>
+</html>
