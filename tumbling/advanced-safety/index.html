@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Advanced Safety &amp; Standards — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 26px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.legend{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.legend h2{color:#fff}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}.danger strong{color:#FFD9E3}
+.b{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:6px;margin-right:8px;vertical-align:2px}
+.b-rule{background:#00A88A;color:#fff}
+.b-prac{background:#FFE3A3;color:#7A5200}
+.item{padding:14px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.item h3{display:inline;font-size:16.5px;font-weight:700;color:var(--grape);margin:0}
+.item p{margin:8px 0 0;font-size:15.5px}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.xlink{background:#F4EFFA;border:1.5px solid #E1D3F0;border-radius:14px;padding:14px 16px;font-size:15px;margin-top:14px}
+.xlink a{color:var(--hot);font-weight:700}
+.stamp{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:14px;padding:14px 16px;font-size:15px;margin:18px 0}
+.stamp b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · Tumbling 06</span>
+  <h1>Advanced<br><em>Standards</em></h1>
+  <p class="dek">What's actually written in the rulebook, what's good coaching, and why knowing the difference matters at Level 5–7.</p>
+  <div class="chips"><span class="chip">⏱ 7 min read</span><span class="chip">🤸 Level 5–7</span><span class="chip">🍁 Cheer Canada</span></div>
+</header>
+
+<section class="card legend rev">
+  <h2>How to read this</h2>
+  <p><span class="b b-rule">Rule</span> Written in Cheer Canada's published rulebooks. Not opinion — the actual standard, and enforced.</p>
+  <p><span class="b b-prac">Practice</span> Sound coaching that isn't a written rule. Useful, but your coach's judgement governs.</p>
+  <p>Most safety content blurs these together. Separating them tells you what's negotiable and what isn't.</p>
+</section>
+
+<section class="card rev">
+  <h2>How you're allowed to train</h2>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Surfaces</h3>
+    <p>Athletes must always <strong>practise and perform</strong> on an appropriate surface. Technical skills — stunts, pyramids, tosses and tumbling — may not be performed on concrete, asphalt, wet or uneven surfaces, or surfaces with obstructions.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Supervision</h3>
+    <p>All athletes must be supervised during official functions by a qualified director or coach.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Emergency response plan</h3>
+    <p>All teams, coaches and program directors must have one in place.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Proficiency gates progression</h3>
+    <p>Coaches must require proficiency before skill progression, and must consider athlete, group and team skill levels when placing athletes at a performance level.</p>
+    <p>That's the entire progression philosophy, and it's binding. One good landing isn't proficiency.</p>
+  </div>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="On a proper sprung floor impact is absorbed and returned. On a hard or obstructed surface the shock travels into the back and knees.">
+      <g font-family="DM Sans,sans-serif">
+        <text x="165" y="30" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Approved surface</text>
+        <rect x="60" y="120" width="210" height="20" rx="6" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <circle cx="165" cy="96" r="14" fill="#00A88A"/>
+        <path d="M165 120 q-26 26 0 44" stroke="#00A88A" stroke-width="3" fill="none"/>
+        <path d="M140 150 l-16 -10 M190 150 l16 -10" stroke="#00A88A" stroke-width="3" marker-end="url(#u)"/>
+        <text x="165" y="185" font-size="12.5" fill="#7A7288" text-anchor="middle">absorbs &amp; returns it</text>
+        <text x="495" y="30" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Concrete · wet · uneven</text>
+        <rect x="390" y="120" width="210" height="20" rx="6" fill="#FFE4EB" stroke="#E5344E" stroke-width="2.5"/>
+        <circle cx="495" cy="96" r="14" fill="#E5344E"/>
+        <path d="M495 82 L495 40" stroke="#E5344E" stroke-width="3" marker-end="url(#u2)"/>
+        <path d="M478 108 L462 88 M512 108 L528 88" stroke="#E5344E" stroke-width="3" marker-end="url(#u2)"/>
+        <text x="495" y="185" font-size="12.5" fill="#7A7288" text-anchor="middle">shock goes into back &amp; knees</text>
+      </g>
+      <defs>
+        <marker id="u" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#00A88A"/></marker>
+        <marker id="u2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#E5344E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>"Surfaces with obstructions" is written into the rule — so clearing bags and bottles off the strip isn't tidiness, it's compliance.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>What you wear</h2>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Jewelry</h3>
+    <p>Jewelry of any kind must be <strong>removed</strong> and may <strong>not</strong> be taped over. Only exception: medical ID tags or bracelets, allowed provided they're taped to the body.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Footwear</h3>
+    <p>Soft-soled shoes with a solid sole must be worn while competing. No dance shoes, boots, or gymnastics slippers.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Nothing in the mouth</h3>
+    <p>No gum, candy, cough drops or similar during participation. Choking risk.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Costumes</h3>
+    <p>An athlete in full head or body costume must not spot, stunt, or tumble.</p>
+  </div>
+</section>
+
+<section class="card rev">
+  <h2>Tumbling legality</h2>
+  <p>The ones athletes at this level actually lose points for.</p>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Origin and landing</h3>
+    <p>All tumbling must originate from and land on the performing surface.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>No twisting after a back handspring step-out</h3>
+    <p>The feet must come together after the skill before any twist or turn. A back handspring step-out moving straight into a half turn is not allowed.</p>
+  </div>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Illegal: back handspring step-out flowing straight into a half turn. Legal: step-out, feet come together, then the turn.">
+      <g font-family="DM Sans,sans-serif">
+        <text x="165" y="28" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Not allowed</text>
+        <rect x="30" y="52" width="86" height="46" rx="11" fill="#FFE4EB" stroke="#E5344E" stroke-width="2.2"/>
+        <text x="73" y="72" font-size="12" fill="#B0122C" text-anchor="middle">BHS</text>
+        <text x="73" y="88" font-size="12" fill="#B0122C" text-anchor="middle">step-out</text>
+        <path d="M122 75 L146 75" stroke="#E5344E" stroke-width="3" marker-end="url(#x1)"/>
+        <rect x="152" y="52" width="86" height="46" rx="11" fill="#FFE4EB" stroke="#E5344E" stroke-width="2.2"/>
+        <text x="195" y="80" font-size="12" fill="#B0122C" text-anchor="middle">½ turn</text>
+        <text x="165" y="126" font-size="12.5" fill="#7A7288" text-anchor="middle">feet never came together</text>
+        <text x="470" y="28" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Allowed</text>
+        <rect x="330" y="52" width="80" height="46" rx="11" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.2"/>
+        <text x="370" y="72" font-size="12" fill="#00745F" text-anchor="middle">BHS</text>
+        <text x="370" y="88" font-size="12" fill="#00745F" text-anchor="middle">step-out</text>
+        <path d="M416 75 L436 75" stroke="#00A88A" stroke-width="3" marker-end="url(#x2)"/>
+        <rect x="442" y="52" width="80" height="46" rx="11" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.2"/>
+        <text x="482" y="72" font-size="12" fill="#00745F" text-anchor="middle">feet</text>
+        <text x="482" y="88" font-size="12" fill="#00745F" text-anchor="middle">together</text>
+        <path d="M528 75 L548 75" stroke="#00A88A" stroke-width="3" marker-end="url(#x2)"/>
+        <rect x="554" y="52" width="80" height="46" rx="11" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.2"/>
+        <text x="594" y="80" font-size="12" fill="#00745F" text-anchor="middle">½ turn</text>
+        <text x="482" y="126" font-size="12.5" fill="#7A7288" text-anchor="middle">clear separation</text>
+      </g>
+      <defs>
+        <marker id="x1" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#E5344E"/></marker>
+        <marker id="x2" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#00A88A"/></marker>
+      </defs>
+    </svg>
+    <figcaption>The feet coming together is what separates the two skills. Without it, it's one illegal connected skill.</figcaption>
+  </figure>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Jumps break a pass</h3>
+    <p>Jumps aren't tumbling from a legality standpoint. A jump inside a tumbling pass breaks the pass.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Nothing in the way</h3>
+    <p>No tumbling over, under, or through a stunt, person, or prop. No tumbling while holding a prop.</p>
+  </div>
+  <div class="item">
+    <span class="b b-rule">Rule</span><h3>Dive rolls</h3>
+    <p>Allowed — but not in a swan or arched position, and not with any twisting.</p>
+  </div>
+</section>
+
+<section class="card rev">
+  <h2>Coaching practice at this level</h2>
+  <div class="item">
+    <span class="b b-prac">Practice</span><h3>Warm-up</h3>
+    <p>10–15 minutes of sport-specific dynamic movement before impact work. Active and progressive, not a stretch session.</p>
+  </div>
+  <div class="item">
+    <span class="b b-prac">Practice</span><h3>Spotting</h3>
+    <p>Track the hips, protect the head and neck, and stay in contact through the whole landing rather than releasing the instant the feet touch.</p>
+  </div>
+  <div class="item">
+    <span class="b b-prac">Practice</span><h3>Hesitation</h3>
+    <p>Balking mid-skill is a real injury mechanism — the core loosens and the shape fails at the worst moment. Box breathing before a pass; honest confidence check before inverting. Low confidence is a signal to drop back down the progression, not to push through.</p>
+    <div class="xlink">Covered in full in the <a href="../mental-training/">Mental Training &amp; Fear Management</a> lesson, including when a block needs more than a coach.</div>
+  </div>
+  <div class="item">
+    <span class="b b-prac">Practice</span><h3>Fatigue</h3>
+    <p>As athletes tire, timing and air awareness degrade — exactly when hard skills get dangerous. Quality reps while fresh, real rest between sets, and the honesty to stop when precision drops.</p>
+  </div>
+</section>
+
+<section class="card danger rev">
+  <h2>The bottom line</h2>
+  <p>At this level the skills are impressive enough that it's tempting to let standards slide chasing them. Don't.</p>
+  <p><strong>Approved surfaces. Proficiency before progression. Trained spotting. Fresh reps.</strong> The rules exist because people got hurt establishing them.</p>
+  <p>All of this happens at the gym under a certified coach. Nothing here is a home-training guide.</p>
+</section>
+
+<div class="stamp">
+  <b>Check the current rulebook</b>
+  Rules change every season, and scholastic and all-star rulebooks differ. Confirm anything here against the current rulebook for your division before relying on it.
+</div>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching.</p>
+  <p>Rules drawn from <a href="https://cheercanada.ca/wp-content/uploads/2025/10/Scholastic-Rules-2025-2026.pdf">Cheer Canada Scholastic Rules &amp; Regulations</a> and <a href="https://www.iasfworlds.net/wp-content/uploads/2023/11/IASF_2023-25_Cheer_Rules.pdf">IASF Cheer Legality Rules</a>. Always verify against the current season's rulebook at <a href="https://cheercanada.ca/">cheercanada.ca</a>.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    b.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
