@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Flexibility &amp; Mobility for Jumps — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;--violet:#8B5CB8;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 130px}
+.hero{padding:54px 0 26px}
+.eyebrow{display:inline-flex;gap:8px;background:var(--grape);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:18px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--hot)}
+.dek{font-size:18px;margin:16px 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16.5px;font-weight:700;color:var(--grape);margin:20px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.quote{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.quote h2{color:#fff}.quote strong{color:var(--gold)}
+.care{background:linear-gradient(135deg,#053F35,#00745F);color:#D6F5EC}
+.care h2{color:#fff}.care strong{color:var(--gold)}
+.danger{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.danger h2{color:#fff}.danger strong{color:#FFD9E3}
+.step{position:relative;padding-top:30px;scroll-margin-top:80px}
+.step.live{outline:3px solid var(--hot);outline-offset:3px}
+.num{position:absolute;top:-16px;left:22px;min-width:46px;height:46px;padding:0 10px;border-radius:14px;background:var(--hot);color:#fff;
+  font-family:Anton,sans-serif;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,46,126,.35)}
+.tag{display:inline-block;background:#FFF0F6;color:var(--hot);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.test{border-left:4px solid var(--violet);background:#F8F3FC;border-radius:0 12px 12px 0;padding:14px 16px;margin:12px 0}
+.test b{display:block;color:#5B2178;font-size:16px;margin-bottom:4px}
+.test span{font-size:15px}
+.test i{font-style:normal;display:block;margin-top:7px;color:var(--hot);font-weight:700;font-size:14.5px}
+.warm{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.warm span{background:#F4EFFA;border:1.5px solid #E1D3F0;border-radius:11px;padding:9px 13px;font-size:14.5px;color:var(--grape);font-weight:500}
+.xlink{background:#F4EFFA;border:1.5px solid #E1D3F0;border-radius:14px;padding:14px 16px;font-size:15px;margin-top:14px}
+.xlink a{color:var(--hot);font-weight:700}
+.prob{border-left:4px solid var(--hot);background:#FFF7FA;border-radius:0 12px 12px 0;padding:13px 16px;margin:11px 0}
+.prob b{display:block;color:var(--grape);font-size:16px}
+.prob span{font-size:14.5px}
+.prob em{font-style:normal;color:var(--teal);font-weight:700}
+.wk{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;margin-top:14px;font-size:15.5px}
+.wk div:nth-child(odd){font-weight:700;color:var(--grape);white-space:nowrap}
+figure{margin:16px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:16px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:10px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.launch{background:linear-gradient(135deg,#FF2E7E,#B8155B);color:#fff;text-align:center}
+.launch h2{color:#fff;font-size:26px}.launch p{color:#FFE0EC}
+.go{display:inline-block;background:#fff;color:#B8155B;border:0;border-radius:14px;padding:15px 30px;font:inherit;font-size:17px;font-weight:700;cursor:pointer;margin-top:6px;box-shadow:0 6px 18px rgba(0,0,0,.16)}
+.go:active{transform:translateY(1px)}
+.streak{margin-top:14px;font-size:14px;color:#FFD9E7}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--grape);color:#fff;
+  padding:14px 18px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(42,18,68,.35);
+  transform:translateY(115%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock .inner{max-width:604px;margin:0 auto}
+.dtop{display:flex;align-items:center;gap:14px}
+.ring{position:relative;flex:0 0 66px;height:66px}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:21px}
+.dname{font-size:17px;font-weight:700;line-height:1.25}
+.dnext{font-size:13px;opacity:.75;margin-top:2px}
+.dbtns{display:flex;gap:8px;margin-top:12px}
+.dbtns button{flex:1;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:11px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.dbtns button.prime{background:#fff;color:var(--grape)}
+.dbtns button.icon{flex:0 0 46px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.dock{transition:none}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Drills &amp; Skills+ · The Jump Laboratory 01</span>
+  <h1>Mobility<br>for <em>Jumps</em></h1>
+  <p class="dek">Find your actual limiter, train the right thing for the right jump, and close the gap between what you can stretch into and what you can lift into.</p>
+  <div class="chips"><span class="chip">⏱ 25 min session</span><span class="chip">🏠 Home friendly</span><span class="chip">🎽 Band or towel</span></div>
+</header>
+
+<section class="card launch rev">
+  <h2>Guided session</h2>
+  <p>Timers, side switches and cues — hands free. Put the phone down and follow along.</p>
+  <button class="go" id="start" type="button">▶︎ Start session</button>
+  <div class="streak" id="streak"></div>
+</section>
+
+<section class="card quote rev">
+  <h2>Why your splits don't equal your jump</h2>
+  <p>There are two kinds of flexibility, and only one shows up in a jump.</p>
+  <p><strong>Passive range</strong> is how far your leg goes when something else moves it — gravity, a band, the floor. That's what a straddle stretch measures.</p>
+  <p><strong>Active range</strong> is how far you lift it yourself, unassisted, against gravity. That's what a toe touch is.</p>
+  <p>This is why athletes with flat splits still have low jumps. The range exists. The strength to reach it under their own power doesn't.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="A long bar showing passive range, a shorter bar showing active range, and the gap between them labelled as the part a jump cannot use.">
+      <g font-family="DM Sans,sans-serif">
+        <text x="20" y="40" font-size="14" font-weight="700" fill="#5B2178">PASSIVE — what a stretch measures</text>
+        <rect x="20" y="52" width="580" height="34" rx="17" fill="#EFE2F8" stroke="#8B5CB8" stroke-width="2.5"/>
+        <text x="20" y="130" font-size="14" font-weight="700" fill="#00745F">ACTIVE — what your jump uses</text>
+        <rect x="20" y="142" width="300" height="34" rx="17" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <line x1="320" y1="52" x2="320" y2="196" stroke="#FF2E7E" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <line x1="600" y1="52" x2="600" y2="196" stroke="#FF2E7E" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <path d="M330 200 L590 200" stroke="#FF2E7E" stroke-width="3" marker-start="url(#l)" marker-end="url(#r)"/>
+        <text x="460" y="192" font-size="13.5" font-weight="700" fill="#FF2E7E" text-anchor="middle">the gap you can't use</text>
+      </g>
+      <defs>
+        <marker id="l" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M9 0 L0 4.5 L9 9z" fill="#FF2E7E"/></marker>
+        <marker id="r" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FF2E7E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>Stretching widens the purple bar. Only strength work widens the teal one — and the teal one is your jump.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>Different jumps, different limiters</h2>
+  <p>Generic stretching gets generic results. Know what you're actually training for.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 250" role="img" aria-label="Toe touch needs adductors, hip flexors and active strength. Pike needs hamstrings. Hurdler needs both, on both sides.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="14" y="20" width="200" height="212" rx="16" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="114" y="52" font-size="16" font-weight="700" fill="#A3134E" text-anchor="middle">TOE TOUCH</text>
+        <text x="114" y="88" font-size="14" fill="#4A4358" text-anchor="middle">inner thighs</text>
+        <text x="114" y="112" font-size="14" fill="#4A4358" text-anchor="middle">hip flexors</text>
+        <text x="114" y="136" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">active strength</text>
+        <text x="114" y="182" font-size="12.5" fill="#7A7288" text-anchor="middle">most low toe touches</text>
+        <text x="114" y="200" font-size="12.5" fill="#7A7288" text-anchor="middle">are a lift problem,</text>
+        <text x="114" y="218" font-size="12.5" fill="#7A7288" text-anchor="middle">not a width problem</text>
+        <rect x="230" y="20" width="200" height="212" rx="16" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2.5"/>
+        <text x="330" y="52" font-size="16" font-weight="700" fill="#7A5200" text-anchor="middle">PIKE</text>
+        <text x="330" y="94" font-size="14" fill="#4A4358" text-anchor="middle">hamstrings</text>
+        <text x="330" y="118" font-size="14" fill="#4A4358" text-anchor="middle">calves</text>
+        <text x="330" y="182" font-size="12.5" fill="#7A7288" text-anchor="middle">low pike but fine</text>
+        <text x="330" y="200" font-size="12.5" fill="#7A7288" text-anchor="middle">toe touch? hamstrings</text>
+        <text x="330" y="218" font-size="12.5" fill="#7A7288" text-anchor="middle">are your limiter</text>
+        <rect x="446" y="20" width="200" height="212" rx="16" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="546" y="52" font-size="16" font-weight="700" fill="#00745F" text-anchor="middle">HURDLER</text>
+        <text x="546" y="94" font-size="14" fill="#4A4358" text-anchor="middle">one leg piking</text>
+        <text x="546" y="118" font-size="14" fill="#4A4358" text-anchor="middle">one leg touching</text>
+        <text x="546" y="182" font-size="12.5" fill="#7A7288" text-anchor="middle">needs everything —</text>
+        <text x="546" y="200" font-size="12.5" fill="#7A7288" text-anchor="middle">and on both sides,</text>
+        <text x="546" y="218" font-size="12.5" fill="#7A7288" text-anchor="middle">where gaps hide</text>
+      </g>
+    </svg>
+    <figcaption>If one jump is much worse than the others, that's your map. Spend your time there.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>Find your limiter</h2>
+  <p>Four tests. Do them once, then again in six weeks. Whichever fails worst is what your training should prioritise.</p>
+  <div class="test"><b>1 · Hip flexors</b><span>Lie on your back at the edge of a bed or bench. Pull one knee to your chest and let the other leg hang off the edge.</span><i>Hanging thigh floats up instead of resting level? Tight hip flexors on that side.</i></div>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Hip flexor test. On the left the hanging thigh rests level with the bench. On the right it floats above the line, indicating tightness.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="20" y="96" width="150" height="16" rx="5" fill="#E4D3DE"/>
+        <line x1="20" y1="104" x2="290" y2="104" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 5"/>
+        <g stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round">
+          <circle cx="44" cy="82" r="11" fill="#00A88A" stroke="none"/>
+          <path d="M60 92 L150 92"/><path d="M150 92 L196 62 L226 92"/>
+          <path d="M150 96 L214 104"/><path d="M214 104 L232 148"/>
+        </g>
+        <text x="160" y="188" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Rests level — good</text>
+        <rect x="366" y="96" width="150" height="16" rx="5" fill="#E4D3DE"/>
+        <line x1="366" y1="104" x2="640" y2="104" stroke="#E5344E" stroke-width="2" stroke-dasharray="6 5"/>
+        <g stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round">
+          <circle cx="390" cy="82" r="11" fill="#E5344E" stroke="none"/>
+          <path d="M406 92 L496 92"/><path d="M496 92 L542 62 L572 92"/>
+          <path d="M496 94 L556 76"/><path d="M556 76 L586 118"/>
+        </g>
+        <path d="M556 96 L556 76" stroke="#E5344E" stroke-width="3" marker-end="url(#hf)"/>
+        <text x="506" y="188" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Floats up — tight</text>
+      </g>
+      <defs><marker id="hf" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#E5344E"/></marker></defs>
+    </svg>
+    <figcaption>Test each side separately — a difference between sides matters as much as the result itself.</figcaption>
+  </figure>
+  <div class="test"><b>2 · Hamstrings</b><span>Lie flat. Lift one straight leg as high as it goes while the other stays down.</span><i>Roughly 80–90° is workable. Well under that, hamstrings are your limiter.</i></div>
+  <div class="test"><b>3 · Adductors</b><span>Sit in your straddle with kneecaps pointing straight up. How wide before they start rolling in?</span><i>That's your honest number — not how wide you can force it.</i></div>
+  <div class="test"><b>4 · The active gap</b><span>From test 2, lower the leg to the floor. Now lift it back to that same height with <strong>nothing helping</strong>.</span><i>The difference between the two heights is your active gap. Most athletes have never measured this, and it's usually the biggest number on the page.</i></div>
+</section>
+
+<section class="card rev">
+  <h2>How range actually improves</h2>
+  <p>Progress comes largely from teaching your nervous system that a new position is <strong>safe</strong> — raising tolerance and quieting the protective reflex. It isn't simply pulling fibres longer.</p>
+  <p>That reframes everything. Forcing a stretch signals danger, and the body tightens against you. Consistency and calm breathing signal the opposite.</p>
+  <div class="rule"><b>Which is why</b>No bouncing, ever. Tension, never pain. 20–30 seconds minimum, up to 45 on deep positions. Core braced — dumping into the lower back to fake range isn't flexibility, it's a habit that becomes back pain.</div>
+  <div class="xlink">Timing, plus shoulder and spine range, are in <a href="../../tumbling/flexibility/">Tumbling+ · Flexibility &amp; Range</a>. Short version: dynamic before you train, static after.</div>
+</section>
+
+<section class="card care rev">
+  <h2>If you're mid-growth-spurt</h2>
+  <p>During a growth spurt, bones lengthen before muscles and tendons catch up. Flexibility often gets temporarily <strong>worse</strong>, and it's common to feel tighter and more awkward than you did six months ago.</p>
+  <p>That's normal. It's temporary. It isn't a sign you've been lazy, and it isn't a reason to force harder — forcing during this window is exactly when things get hurt.</p>
+  <p>What matters: keep the work consistent and gentle, don't chase the range you used to have, and take knee or heel pain seriously rather than pushing through. Growing athletes are more prone to both.</p>
+</section>
+
+<section class="card step rev" id="s-warm">
+  <div class="num">1</div>
+  <span class="tag">5 minutes</span>
+  <h2>Warm up first</h2>
+  <p>Never stretch cold. Cold tissue resists and fights back.</p>
+  <div class="warm"><span>Jumping jacks × 50</span><span>High knees, 30s</span><span>Walking lunges × 10 each</span><span>Leg swings × 10 each way</span></div>
+  <p style="margin-top:12px">Leg swings loose and pendulum-like, wall for balance. Chest high through the lunges.</p>
+</section>
+
+<section class="card step rev" id="s-hip">
+  <div class="num">2</div>
+  <span class="tag">Toe touch lift</span>
+  <h2>Hip opener lunge</h2>
+  <p>Tight hip flexors physically pull your legs back down during a toe touch. This is the one that most directly costs you height.</p>
+  <p>Kneel on your right knee, left foot flat in front, both legs around 90°. Tuck the tailbone under and squeeze the right glute hard. Shift hips gently forward, chest completely upright. Right arm reaches to the ceiling.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 240" role="img" aria-label="A lunge with the lower back arched, incorrect, next to a lunge with the tailbone tucked and torso upright, correct.">
+      <line x1="20" y1="204" x2="640" y2="204" stroke="#E4D3DE" stroke-width="3"/>
+      <g stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="150" cy="58" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M152 70 Q136 116 158 150"/>
+        <path d="M158 150 L104 178 L104 204"/><path d="M158 150 L216 178 L216 204"/>
+      </g>
+      <ellipse cx="128" cy="118" rx="24" ry="16" fill="none" stroke="#E5344E" stroke-width="2.5" stroke-dasharray="5 4"/>
+      <text x="150" y="30" font-size="14" font-weight="700" fill="#E5344E" font-family="DM Sans,sans-serif" text-anchor="middle">Back arched</text>
+      <text x="150" y="230" font-size="13" fill="#7A7288" font-family="DM Sans,sans-serif" text-anchor="middle">stretch goes to the spine</text>
+      <g stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round">
+        <circle cx="490" cy="58" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M490 70 L490 150"/>
+        <path d="M490 150 L436 178 L436 204"/><path d="M490 150 L548 178 L548 204"/>
+      </g>
+      <line x1="490" y1="44" x2="490" y2="160" stroke="#00A88A" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="490" y="30" font-size="14" font-weight="700" fill="#00A88A" font-family="DM Sans,sans-serif" text-anchor="middle">Tailbone tucked</text>
+      <text x="490" y="230" font-size="13" fill="#7A7288" font-family="DM Sans,sans-serif" text-anchor="middle">stretch goes to the hip</text>
+    </svg>
+    <figcaption>The whole drill is in that tuck. Without it you're arching your lower back, not opening your hip — and it feels deeper while doing less.</figcaption>
+  </figure>
+</section>
+
+<section class="card step rev" id="s-ham">
+  <div class="num">3</div>
+  <span class="tag">Pike &amp; hurdler</span>
+  <h2>Banded hamstring stretch</h2>
+  <p>Lie flat, band around the arch of the right foot, left leg flat with toes to the ceiling. Pull the right leg slowly toward your chest, knee locked.</p>
+  <p><strong>Squeeze the quad hard while you hold.</strong> Engaging the front of the thigh helps the hamstring let go.</p>
+  <div class="rule"><b>Check</b>Knee bends means you've pulled too far. Lower until the leg is perfectly straight — a bent-knee version is a different, easier stretch.</div>
+</section>
+
+<section class="card step rev" id="s-str">
+  <div class="num">4</div>
+  <span class="tag">Toe touch width</span>
+  <h2>Straddle</h2>
+  <p><strong>Standing:</strong> feet wide, toes forward, hinge with a flat back, hands to the floor, walk them back in line with the heels. Weight slightly forward, not sitting into the heels.</p>
+  <p><strong>Seated:</strong> legs as wide as they'll go, sit tall, walk the hands forward slowly.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 250" role="img" aria-label="Seated straddle from the front. On the left the kneecaps roll inward, incorrect. On the right they point straight up, correct.">
+      <g font-family="DM Sans,sans-serif">
+        <text x="165" y="30" font-size="14" font-weight="700" fill="#E5344E" text-anchor="middle">Knees rolled in</text>
+        <g stroke="#E5344E" stroke-width="5" fill="none" stroke-linecap="round">
+          <path d="M165 96 L64 168"/><path d="M165 96 L266 168"/>
+        </g>
+        <circle cx="165" cy="80" r="14" fill="#E5344E"/>
+        <path d="M110 118 l-14 22" stroke="#E5344E" stroke-width="3.5" marker-end="url(#d1)"/>
+        <path d="M220 118 l14 22" stroke="#E5344E" stroke-width="3.5" marker-end="url(#d1)"/>
+        <text x="165" y="206" font-size="13" fill="#7A7288" text-anchor="middle">pelvis out of alignment —</text>
+        <text x="165" y="224" font-size="13" fill="#7A7288" text-anchor="middle">stretching the wrong thing</text>
+        <text x="495" y="30" font-size="14" font-weight="700" fill="#00A88A" text-anchor="middle">Kneecaps &amp; laces up</text>
+        <g stroke="#00A88A" stroke-width="5" fill="none" stroke-linecap="round">
+          <path d="M495 96 L394 168"/><path d="M495 96 L596 168"/>
+        </g>
+        <circle cx="495" cy="80" r="14" fill="#00A88A"/>
+        <path d="M440 132 L440 100" stroke="#00A88A" stroke-width="3.5" marker-end="url(#d2)"/>
+        <path d="M550 132 L550 100" stroke="#00A88A" stroke-width="3.5" marker-end="url(#d2)"/>
+        <text x="495" y="206" font-size="13" fill="#7A7288" text-anchor="middle">this is your honest range</text>
+      </g>
+      <defs>
+        <marker id="d1" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#E5344E"/></marker>
+        <marker id="d2" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#00A88A"/></marker>
+      </defs>
+    </svg>
+    <figcaption>Kneecaps and shoelaces point straight up. Stop the second they roll inward — that's your maximum, and going past it trains a position your jump can't use.</figcaption>
+  </figure>
+</section>
+
+<section class="card step rev" id="s-pike">
+  <div class="num">5</div>
+  <span class="tag">Posterior chain</span>
+  <h2>Pike</h2>
+  <p>Legs zipped tightly together. Flex the feet hard, toes pulling back toward the shins — that brings the calves in alongside the hamstrings.</p>
+  <p>Reach both arms up to lengthen the spine, then hinge from the hips reaching past the toes. Ankles or shins if the toes are out of reach — never bend the knees.</p>
+</section>
+
+<section class="card rev">
+  <h2>The upgrade: contract-relax</h2>
+  <p>Once the basic holds feel easy, this gets more from the same time. Use it on the hamstring and straddle stretches.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 200" role="img" aria-label="Four-step cycle: hold twenty seconds, push for five seconds, relax for three seconds, then ease deeper and hold twenty seconds.">
+      <g font-family="DM Sans,sans-serif">
+        <rect x="14" y="52" width="140" height="76" rx="15" fill="#EFE2F8" stroke="#8B5CB8" stroke-width="2.5"/>
+        <text x="84" y="84" font-size="15" font-weight="700" fill="#5B2178" text-anchor="middle">HOLD</text>
+        <text x="84" y="106" font-size="14" fill="#5B2178" text-anchor="middle">20 sec</text>
+        <path d="M162 90 L186 90" stroke="#8B5CB8" stroke-width="3" marker-end="url(#cr)"/>
+        <rect x="194" y="52" width="140" height="76" rx="15" fill="#FFF0F6" stroke="#FF2E7E" stroke-width="2.5"/>
+        <text x="264" y="80" font-size="15" font-weight="700" fill="#A3134E" text-anchor="middle">PUSH</text>
+        <text x="264" y="100" font-size="13.5" fill="#A3134E" text-anchor="middle">5 sec · half effort</text>
+        <text x="264" y="118" font-size="12.5" fill="#7A7288" text-anchor="middle">nothing moves</text>
+        <path d="M342 90 L366 90" stroke="#FF2E7E" stroke-width="3" marker-end="url(#cr2)"/>
+        <rect x="374" y="52" width="120" height="76" rx="15" fill="#FFF6DC" stroke="#FFC53D" stroke-width="2.5"/>
+        <text x="434" y="84" font-size="15" font-weight="700" fill="#7A5200" text-anchor="middle">RELAX</text>
+        <text x="434" y="106" font-size="14" fill="#7A5200" text-anchor="middle">3 sec</text>
+        <path d="M502 90 L526 90" stroke="#FFC53D" stroke-width="3" marker-end="url(#cr3)"/>
+        <rect x="534" y="52" width="112" height="76" rx="15" fill="#D9F4EE" stroke="#00A88A" stroke-width="2.5"/>
+        <text x="590" y="80" font-size="15" font-weight="700" fill="#00745F" text-anchor="middle">DEEPER</text>
+        <text x="590" y="100" font-size="13.5" fill="#00745F" text-anchor="middle">hold 20 sec</text>
+        <text x="590" y="118" font-size="12.5" fill="#7A7288" text-anchor="middle">× 2 more</text>
+        <text x="330" y="172" font-size="13.5" fill="#7A7288" text-anchor="middle">The brief contraction gets the nervous system to allow more range on the release.</text>
+      </g>
+      <defs>
+        <marker id="cr" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#8B5CB8"/></marker>
+        <marker id="cr2" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FF2E7E"/></marker>
+        <marker id="cr3" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FFC53D"/></marker>
+      </defs>
+    </svg>
+    <figcaption>Press your leg into the band, or your knees into the floor, at about half effort. You shouldn't actually move.</figcaption>
+  </figure>
+  <div class="rule"><b>Two cautions</b>Never with a partner pushing you — the pressure comes from you, into something immovable, so you control it entirely. And skip it completely if anything hurts.</div>
+</section>
+
+<section class="card step rev" id="s-act">
+  <div class="num">6</div>
+  <span class="tag">The part that counts</span>
+  <h2>Close the active gap</h2>
+  <p>Straight after the stretches, while the range is fresh. <strong>This is what turns floor flexibility into jump height</strong>, and it's the part everyone skips.</p>
+  <p><strong>Straddle lifts.</strong> Sit in your straddle, hands on the floor, lift both legs a few inches under their own power. Hold 3 seconds. 8 reps.</p>
+  <p><strong>Pike lifts.</strong> Sit in a pike, hands beside your hips, lift both straight legs off the floor. Hold 3 seconds. 8 reps.</p>
+  <p><strong>Side leg lifts.</strong> Standing or lying, lift the straight leg toward toe-touch height with nothing helping. Hold 3 seconds at the top. 8 per side.</p>
+  <div class="rule"><b>Expect this</b>If these feel far harder than the stretches, that's your gap — and it's the honest measure of what your jump can currently use.</div>
+</section>
+
+<section class="card rev">
+  <h2>What a week looks like</h2>
+  <div class="wk">
+    <div>3× / week</div><div>Full session, 25 min. On days you're not doing your heaviest training, or after it. Never immediately before jumping.</div>
+    <div>Other days</div><div>Active work only, 5 min. The lifts are low-fatigue and respond well to frequency.</div>
+    <div>Pre-practice</div><div>Dynamic only — leg swings, lunges, high knees. No long holds; they can temporarily blunt power.</div>
+  </div>
+  <p style="margin-top:14px">Missing sessions costs you more than any single session gains you. Three short weeks beat one heroic one.</p>
+</section>
+
+<section class="card rev">
+  <h2>What progress actually looks like</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 260" role="img" aria-label="A chart over twelve weeks. Passive range begins improving around week four. Active range and jump height improve later, from around week eight.">
+      <line x1="56" y1="30" x2="56" y2="196" stroke="#C9BFD6" stroke-width="2"/>
+      <line x1="56" y1="196" x2="632" y2="196" stroke="#C9BFD6" stroke-width="2"/>
+      <path d="M56 190 C160 186 200 150 296 116 C400 82 500 62 628 50" fill="none" stroke="#8B5CB8" stroke-width="4"/>
+      <path d="M56 192 C200 190 280 186 348 168 C450 140 540 96 628 68" fill="none" stroke="#00A88A" stroke-width="4"/>
+      <g font-family="DM Sans,sans-serif" font-size="12.5" fill="#7A7288">
+        <text x="110" y="216" text-anchor="middle">wk 1–3</text>
+        <text x="270" y="216" text-anchor="middle">wk 4–8</text>
+        <text x="500" y="216" text-anchor="middle">wk 8–12</text>
+        <text x="30" y="120" text-anchor="middle" transform="rotate(-90 30 120)">range</text>
+      </g>
+      <text x="410" y="48" font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" fill="#8B5CB8">passive range</text>
+      <text x="404" y="106" font-family="DM Sans,sans-serif" font-size="13.5" font-weight="700" fill="#00A88A">active range &amp; jump height</text>
+      <line x1="188" y1="30" x2="188" y2="196" stroke="#FF2E7E" stroke-width="2" stroke-dasharray="5 5"/>
+      <text x="196" y="44" font-family="DM Sans,sans-serif" font-size="12.5" font-weight="700" fill="#FF2E7E">most people quit here</text>
+      <text x="330" y="248" font-family="DM Sans,sans-serif" font-size="13" fill="#7A7288" text-anchor="middle">Jumps change noticeably later than flexibility does. That lag is normal.</text>
+    </svg>
+    <figcaption>Weeks 1–3 look like nothing is happening. What's happening is your nervous system getting comfortable. Add time to all of it if you're mid-growth-spurt.</figcaption>
+  </figure>
+</section>
+
+<section class="card rev">
+  <h2>"I've stretched for months and nothing's changed"</h2>
+  <p>Work through these in order.</p>
+  <div class="prob"><b>Are you doing active work?</b><span>All passive stretching means your jump has no way to use the range. <em>→ Most common cause by a wide margin.</em></span></div>
+  <div class="prob"><b>Are you consistent?</b><span>Three times a week for eight weeks beats daily for two weeks then nothing. <em>→ Frequency over intensity.</em></span></div>
+  <div class="prob"><b>Are you forcing it?</b><span>Pain and bouncing make the body defensive. <em>→ Backing off often produces faster progress.</em></span></div>
+  <div class="prob"><b>Are you holding long enough?</b><span>Ten seconds isn't a stretch. <em>→ Twenty minimum.</em></span></div>
+  <div class="prob"><b>Are you growing?</b><span>Range often goes backwards mid-spurt. <em>→ Holding steady is the win right now.</em></span></div>
+  <div class="prob"><b>Is it structural?</b><span>Some limits are joint shape, not muscle tightness, and stretching won't change those. <em>→ If one position has never moved despite all of the above, ask a physiotherapist rather than pushing harder.</em></span></div>
+</section>
+
+<section class="card danger rev">
+  <h2>Safety</h2>
+  <p><strong>Never bounce, never force, no partner pushing you deeper.</strong> Range built by force comes off just as fast and takes something with it.</p>
+  <p><strong>Tension, never pain.</strong> Sharp pinching in a hip, or anything down the back of the leg, is a stop-and-report.</p>
+  <p><strong>More range isn't automatically better.</strong> Range you can't control with strength is instability, not flexibility.</p>
+  <p>Growing athletes: gentle and consistent, not aggressive. Knee or heel pain gets looked at, not pushed through.</p>
+</section>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching. Check with your coach before adding conditioning at home.</p>
+</footer>
+
+</div>
+
+<div class="dock" id="dock">
+  <div class="inner">
+    <div class="dtop">
+      <div class="ring">
+        <svg width="66" height="66" viewBox="0 0 66 66">
+          <circle cx="33" cy="33" r="28" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/>
+          <circle id="arc" cx="33" cy="33" r="28" fill="none" stroke="#FFC53D" stroke-width="6" stroke-linecap="round" stroke-dasharray="175.9" stroke-dashoffset="0"/>
+        </svg>
+        <b id="clock">45</b>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div class="dname" id="dname">Ready</div>
+        <div class="dnext" id="dnext"></div>
+      </div>
+    </div>
+    <div class="dbtns">
+      <button type="button" class="prime" id="pause">Pause</button>
+      <button type="button" id="skip">Skip →</button>
+      <button type="button" class="icon" id="mute" aria-label="Mute">🔊</button>
+      <button type="button" class="icon" id="quit" aria-label="End session">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pb=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    pb.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+
+  var SEQ=[
+    {n:'Warm up',c:'Jacks, high knees, lunges, leg swings',s:300,el:'s-warm'},
+    {n:'Hip opener — RIGHT knee down',c:'Tailbone tucked, chest tall',s:45,el:'s-hip'},
+    {n:'Hip opener — LEFT knee down',c:'Squeeze that glute',s:45,el:'s-hip'},
+    {n:'Hamstring — RIGHT leg',c:'Knee locked, squeeze the quad',s:45,el:'s-ham'},
+    {n:'Hamstring — LEFT leg',c:'Other leg stays flat',s:45,el:'s-ham'},
+    {n:'Standing straddle',c:'Flat back, weight slightly forward',s:30,el:'s-str'},
+    {n:'Seated straddle',c:'Kneecaps and laces pointing up',s:45,el:'s-str'},
+    {n:'Pike',c:'Feet flexed hard, hinge from the hips',s:45,el:'s-pike'},
+    {n:'Straddle lifts × 8',c:'3-second hold each. Tap when done.',s:0,el:'s-act'},
+    {n:'Pike lifts × 8',c:'Hands beside hips, legs straight.',s:0,el:'s-act'},
+    {n:'Side lifts — RIGHT × 8',c:'Nothing helping. 3-second hold.',s:0,el:'s-act'},
+    {n:'Side lifts — LEFT × 8',c:'Nothing helping. 3-second hold.',s:0,el:'s-act'}
+  ];
+  var CIRC=175.9,i=-1,left=0,tick=null,paused=false,muted=false,ac=null;
+  var dock=document.getElementById('dock'),clock=document.getElementById('clock'),
+      arc=document.getElementById('arc'),dn=document.getElementById('dname'),
+      dx=document.getElementById('dnext'),pauseB=document.getElementById('pause'),
+      streakEl=document.getElementById('streak');
+
+  function beep(hz,ms){
+    if(muted)return;
+    try{
+      ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+      var o=ac.createOscillator(),g=ac.createGain();
+      o.connect(g);g.connect(ac.destination);o.frequency.value=hz;o.type='sine';
+      g.gain.setValueAtTime(.16,ac.currentTime);
+      g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+ms/1000);
+      o.start();o.stop(ac.currentTime+ms/1000);
+    }catch(e){}
+  }
+  function fmt(s){var m=Math.floor(s/60);return m?m+':'+String(s%60).padStart(2,'0'):String(s)}
+  function highlight(id){
+    document.querySelectorAll('.step').forEach(function(e){e.classList.remove('live')});
+    var el=document.getElementById(id);
+    if(el){el.classList.add('live');el.scrollIntoView({behavior:'smooth',block:'start'})}
+  }
+  function render(){
+    var st=SEQ[i];
+    dn.textContent=st.n;
+    dx.textContent=(i<SEQ.length-1?'Next · '+SEQ[i+1].n:'Last one')+' · '+st.c;
+    if(st.s>0){clock.textContent=fmt(left);arc.style.strokeDashoffset=CIRC*(1-left/st.s)}
+    else{clock.textContent='✓';arc.style.strokeDashoffset=0}
+    pauseB.textContent=st.s>0?(paused?'Resume':'Pause'):'Done ✓';
+  }
+  function go(n){
+    clearInterval(tick);i=n;
+    if(i>=SEQ.length){finish();return}
+    var st=SEQ[i];left=st.s;paused=false;highlight(st.el);render();
+    if(st.s>0){
+      tick=setInterval(function(){
+        if(paused)return;
+        left--;
+        if(left<=3&&left>0)beep(660,90);
+        if(left<=0){beep(950,260);clearInterval(tick);setTimeout(function(){go(i+1)},420);return}
+        render();
+      },1000);
+    }
+  }
+  function finish(){
+    clearInterval(tick);dock.classList.remove('on');
+    document.querySelectorAll('.step').forEach(function(e){e.classList.remove('live')});
+    beep(880,180);setTimeout(function(){beep(1180,300)},200);
+    try{
+      var d=JSON.parse(localStorage.getItem('jm-log')||'{"n":0,"last":""}');
+      var today=new Date().toISOString().slice(0,10);
+      if(d.last!==today){d.n++;d.last=today;localStorage.setItem('jm-log',JSON.stringify(d))}
+    }catch(e){}
+    showStreak(true);
+    document.getElementById('start').textContent='▶︎ Run it again';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function showStreak(justDone){
+    try{
+      var d=JSON.parse(localStorage.getItem('jm-log')||'{"n":0,"last":""}');
+      if(!d.n){streakEl.textContent='';return}
+      var today=new Date().toISOString().slice(0,10);
+      streakEl.textContent=(justDone?'Nice. ':'')+d.n+' session'+(d.n>1?'s':'')+' logged'+
+        (d.last===today?' · done today ✓':'');
+    }catch(e){}
+  }
+
+  document.getElementById('start').addEventListener('click',function(){
+    dock.classList.add('on');beep(760,120);go(0);
+  });
+  pauseB.addEventListener('click',function(){
+    if(SEQ[i]&&SEQ[i].s===0){go(i+1);return}
+    paused=!paused;render();
+  });
+  document.getElementById('skip').addEventListener('click',function(){go(i+1)});
+  document.getElementById('quit').addEventListener('click',function(){
+    clearInterval(tick);dock.classList.remove('on');
+    document.querySelectorAll('.step').forEach(function(e){e.classList.remove('live')});
+  });
+  document.getElementById('mute').addEventListener('click',function(){
+    muted=!muted;this.textContent=muted?'🔇':'🔊';
+  });
+  showStreak(false);
+})();
+</script>
+</body>
+</html>
