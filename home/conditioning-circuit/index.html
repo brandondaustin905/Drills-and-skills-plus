@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Conditioning Circuit — Safe at Home — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;--violet:#8B5CB8;
+  --grn:#0E9E6E;--grnbg:#E7F7F0;--grnln:#B4E6D4;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--grn),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 150px}
+.hero{padding:54px 0 26px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px;background:var(--grnbg);color:#0A6B4B;border:1.5px solid var(--grn)}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:12px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--grn)}
+.dek{font-size:18px;margin:16px 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.note{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.note h2{color:#fff}.note strong{color:var(--gold)}
+.ex{position:relative;padding-top:32px;scroll-margin-top:80px}
+.ex.live{outline:3px solid var(--grn);outline-offset:3px}
+.num{position:absolute;top:-16px;left:22px;width:46px;height:46px;border-radius:14px;background:var(--grn);color:#fff;
+  font-family:Anton,sans-serif;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(14,158,110,.34)}
+.tag{display:inline-block;background:var(--grnbg);color:#0A6B4B;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.breaks{background:#FFF0F6;border:1.5px solid #FFC2DC;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.breaks b{color:#A3134E;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.bad{background:#FFF7FA;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:11px 14px;margin-top:12px;font-size:15px}
+.bad b{color:#B0122C;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.think{background:var(--grnbg);border:1.5px solid var(--grnln);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:16px;font-style:italic;color:#0A6B4B;text-align:center;font-weight:700}
+figure{margin:14px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:14px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:9px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.list{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;margin-top:12px;font-size:16px}
+.list div:nth-child(odd){font-weight:700;color:var(--hot);font-family:Anton,sans-serif;font-size:18px}
+.launch{background:linear-gradient(135deg,#0E9E6E,#0A6B4B);color:#fff;text-align:center}
+.launch h2{color:#fff;font-size:26px}.launch p{color:#D6F5EC}
+.pace{display:flex;gap:8px;margin:16px 0 4px}
+.pace button{flex:1;background:rgba(255,255,255,.16);color:#fff;border:2px solid transparent;border-radius:12px;padding:10px 6px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;line-height:1.2}
+.pace button span{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-top:3px}
+.pace button.on{background:#fff;color:#0A6B4B;border-color:#fff}
+.go{display:inline-block;background:#fff;color:#0A6B4B;border:0;border-radius:14px;padding:15px 30px;font:inherit;font-size:17px;font-weight:700;cursor:pointer;margin-top:12px;box-shadow:0 6px 18px rgba(0,0,0,.16)}
+.go:active{transform:translateY(1px)}
+.streak{margin-top:14px;font-size:14px;color:#D6F5EC}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--grape);color:#fff;
+  padding:14px 18px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(42,18,68,.35);
+  transform:translateY(120%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock .inner{max-width:604px;margin:0 auto}
+.dtop{display:flex;align-items:center;gap:14px}
+.ring{position:relative;flex:0 0 66px;height:66px}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:21px}
+.dfig{flex:0 0 76px}
+.dfig svg{width:76px;height:60px;display:block}
+.dname{font-size:17px;font-weight:700;line-height:1.22}
+.dnext{font-size:13px;opacity:.75;margin-top:2px}
+.drep{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;opacity:.62;font-weight:700}
+.dbtns{display:flex;gap:8px;margin-top:12px}
+.dbtns button{flex:1;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:11px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.dbtns button.prime{background:#fff;color:var(--grape)}
+.dbtns button.icon{flex:0 0 46px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.dock{transition:none}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 L10 17.5 L19 6.5" stroke="#0A6B4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Green · safe at home</span>
+  <h1>Conditioning<br><em>Form Clinic</em></h1>
+  <p class="dek">Six exercises. Each one has a specific thing that breaks first when you're tired. Here's how to catch it.</p>
+  <div class="chips"><span class="chip">⏱ ~12 min</span><span class="chip">🏠 Floor + wall</span><span class="chip">🎧 Guided mode</span></div>
+</header>
+
+<section class="card launch rev">
+  <h2>Guided circuit</h2>
+  <p>Every exercise timed, rounds counted, rests handled. Phone down and work.</p>
+  <div class="pace">
+    <button type="button" data-p="0">2 rounds<span>building</span></button>
+    <button type="button" data-p="1" class="on">3 rounds<span>standard</span></button>
+    <button type="button" data-p="2">3 rounds<span>short rest</span></button>
+  </div>
+  <button class="go" id="start" type="button">▶︎ Start circuit</button>
+  <div class="streak" id="streak"></div>
+</section>
+
+<section class="card note rev">
+  <h2>What this page is for</h2>
+  <p>The exercises here are simple. <strong>Doing them correctly when your legs are burning is not.</strong></p>
+  <p>So this is a form clinic. Every exercise below has one specific thing that fails first under fatigue — and knowing which one lets you catch it before it becomes a habit.</p>
+  <p>Move with purpose, not speed.</p>
+</section>
+
+<section class="card rev">
+  <h2>The circuit</h2>
+  <p><strong>2–3 rounds. Rest 60 seconds between rounds.</strong></p>
+  <div class="list">
+    <div>10</div><div>Squat jumps</div>
+    <div>10</div><div>Standing toe touches</div>
+    <div>15s</div><div>Plank</div>
+    <div>10</div><div>Pike snap-ups</div>
+    <div>10</div><div>Calf raises</div>
+    <div>30s</div><div>Wall sit</div>
+  </div>
+</section>
+
+<section class="card ex rev" id="e1">
+  <div class="num">1</div><span class="tag">10 reps</span>
+  <h2>Squat jumps</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Left: squat with chest collapsed forward and knees past toes. Right: chest lifted, knees over toes.">
+      <line x1="20" y1="182" x2="640" y2="182" stroke="#E4D3DE" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="150" cy="58" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M152 70 Q170 100 158 122" stroke="#E5344E" stroke-width="6"/>
+        <path d="M158 122 L206 148 L172 182" stroke="#E5344E" stroke-width="6"/>
+        <path d="M152 82 L198 96" stroke="#E5344E" stroke-width="6"/>
+        <line x1="172" y1="182" x2="172" y2="40" stroke="#E5344E" stroke-width="2" stroke-dasharray="5 5"/>
+        <circle cx="490" cy="52" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M490 64 L494 122" stroke="#00A88A" stroke-width="6"/>
+        <path d="M494 122 L524 146 L516 182" stroke="#00A88A" stroke-width="6"/>
+        <path d="M490 78 L448 96" stroke="#00A88A" stroke-width="6"/>
+        <line x1="516" y1="182" x2="516" y2="40" stroke="#00A88A" stroke-width="2" stroke-dasharray="5 5"/>
+      </g>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="165" y="208" font-size="14" font-weight="700" fill="#E5344E">Chest collapsed, knee past toe</text>
+        <text x="495" y="208" font-size="14" font-weight="700" fill="#00A88A">Chest lifted, knee over toe</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Feet shoulder-width. Drop into a controlled squat. Explode straight up. Land softly back into the squat.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The landing. It gets louder as you tire — which means you've stopped absorbing and started crashing.</div>
+  <div class="bad"><b>Mistakes</b>Jumping forward instead of up · Collapsing chest · Heavy, loud landings</div>
+  <div class="think">"Explode up, absorb down."</div>
+</section>
+
+<section class="card ex rev" id="e2">
+  <div class="num">2</div><span class="tag">10 reps</span>
+  <h2>Standing toe touches</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Left: bent knees and dropped chest in the air. Right: straight legs, chest tall, arms in a T.">
+      <g fill="none" stroke-linecap="round">
+        <circle cx="165" cy="72" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M165 84 Q172 106 168 120" stroke="#E5344E" stroke-width="6"/>
+        <path d="M168 118 L114 116 L88 142 M168 118 L222 116 L248 142" stroke="#E5344E" stroke-width="6"/>
+        <path d="M165 94 L118 110 M165 94 L212 110" stroke="#E5344E" stroke-width="6"/>
+        <circle cx="495" cy="60" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M495 72 L495 120" stroke="#00A88A" stroke-width="6"/>
+        <path d="M495 116 L418 96 M495 116 L572 96" stroke="#00A88A" stroke-width="6"/>
+        <path d="M495 84 L424 84 M495 84 L566 84" stroke="#00A88A" stroke-width="6"/>
+      </g>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="165" y="188" font-size="14" font-weight="700" fill="#E5344E">Bent knees, chest folding</text>
+        <text x="495" y="188" font-size="14" font-weight="700" fill="#00A88A">Legs locked, chest tall, arms in T</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Start tall, feet together. Jump straight up. Hit a clean toe touch in the air. Land softly and reset.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The arms. They slow down before anything else does — and your height goes with them.</div>
+  <div class="bad"><b>Mistakes</b>Bent knees mid-air · Weak or slow arms · Losing control on landing</div>
+  <div class="think">"Sharp arms create sharp height."</div>
+</section>
+
+<section class="card ex rev" id="e3">
+  <div class="num">3</div><span class="tag">15 seconds</span>
+  <h2>Plank</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 210" role="img" aria-label="Left: hips sagging below the line. Right: a straight line from head to heels.">
+      <line x1="20" y1="172" x2="640" y2="172" stroke="#E4D3DE" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M92 128 L92 172" stroke="#E5344E" stroke-width="6"/>
+        <circle cx="80" cy="118" r="11" fill="#E5344E"/>
+        <path d="M92 128 Q170 168 258 140 L272 172" stroke="#E5344E" stroke-width="6"/>
+        <line x1="92" y1="126" x2="262" y2="138" stroke="#E5344E" stroke-width="2" stroke-dasharray="5 5"/>
+        <path d="M424 122 L424 172" stroke="#00A88A" stroke-width="6"/>
+        <circle cx="412" cy="112" r="11" fill="#00A88A"/>
+        <path d="M424 122 L596 146 L604 172" stroke="#00A88A" stroke-width="6"/>
+      </g>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="180" y="198" font-size="14" font-weight="700" fill="#E5344E">Hips sagging</text>
+        <text x="510" y="198" font-size="14" font-weight="700" fill="#00A88A">One straight line</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Elbows under shoulders. Legs straight. Core tight. Body in a straight line.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The hips sag — usually around second 10, and usually you won't feel it happen. That's why it needs a checkpoint.</div>
+  <div class="bad"><b>Mistakes</b>Hips too high or too low · Holding your breath · Relaxing the core halfway through</div>
+  <div class="think">"Straight line, full tension."</div>
+</section>
+
+<section class="card ex rev" id="e4">
+  <div class="num">4</div><span class="tag">10 reps</span>
+  <h2>Pike snap-ups</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 200" role="img" aria-label="From flat on the back, arms and legs snap up together into a tight V shape.">
+      <line x1="20" y1="158" x2="640" y2="158" stroke="#E4D3DE" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round" stroke="#C9BFD6" stroke-width="6">
+        <path d="M124 144 L236 144"/><path d="M236 144 L320 128"/><path d="M124 144 L48 128"/>
+      </g>
+      <circle cx="116" cy="136" r="11" fill="#C9BFD6"/>
+      <path d="M340 122 L396 122" stroke="#FF2E7E" stroke-width="4" marker-end="url(#sn)"/>
+      <g fill="none" stroke-linecap="round" stroke="#0E9E6E" stroke-width="7">
+        <path d="M474 154 L560 58"/>
+        <path d="M474 154 L392 62"/>
+      </g>
+      <circle cx="474" cy="154" r="13" fill="#0E9E6E"/>
+      <defs><marker id="sn" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FF2E7E"/></marker></defs>
+      <g font-family="DM Sans,sans-serif" font-size="13.5" text-anchor="middle">
+        <text x="184" y="184" fill="#7A7288">flat, lower back down</text>
+        <text x="476" y="184" font-weight="700" fill="#0A6B4B">tight V, legs locked</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Lie on your back, arms overhead. Snap arms and legs together into a tight V. Control the way back down.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The descent. Athletes start <em>dropping</em> instead of lowering — which removes most of the benefit and all of the control.</div>
+  <div class="bad"><b>Mistakes</b>Using momentum instead of core · Bent knees · Sloppy timing</div>
+  <div class="think">"Snap tight, not fast and loose."</div>
+</section>
+
+<section class="card ex rev" id="e5">
+  <div class="num">5</div><span class="tag">10 reps</span>
+  <h2>Calf raises</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 200" role="img" aria-label="Left: ankles rolling outward. Right: full extension straight up through the ankles with a pause at the top.">
+      <line x1="20" y1="168" x2="640" y2="168" stroke="#E4D3DE" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="165" cy="46" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M165 58 L165 108" stroke="#E5344E" stroke-width="6"/>
+        <path d="M165 108 L144 140 L128 162 M165 108 L186 140 L202 162" stroke="#E5344E" stroke-width="6"/>
+        <path d="M120 156 L104 150 M210 156 L226 150" stroke="#E5344E" stroke-width="3" marker-end="url(#ro)"/>
+        <circle cx="495" cy="40" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M495 52 L495 104" stroke="#00A88A" stroke-width="6"/>
+        <path d="M495 104 L484 140 L488 160 M495 104 L506 140 L502 160" stroke="#00A88A" stroke-width="6"/>
+        <path d="M488 160 L478 168 M502 160 L512 168" stroke="#00A88A" stroke-width="6"/>
+      </g>
+      <defs><marker id="ro" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#E5344E"/></marker></defs>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="165" y="192" font-size="14" font-weight="700" fill="#E5344E">Ankles rolling out</text>
+        <text x="495" y="192" font-size="14" font-weight="700" fill="#00A88A">Straight up, full extension</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Stand tall. Rise onto your toes. Pause briefly at the top. Lower with control.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The pause disappears. It turns into bouncing — and bouncing does nothing at all.</div>
+  <div class="bad"><b>Mistakes</b>Bouncing up and down · Rolling the ankles outward · No pause at the top</div>
+  <div class="think">"Lift, hold, control."</div>
+</section>
+
+<section class="card ex rev" id="e6">
+  <div class="num">6</div><span class="tag">30 seconds</span>
+  <h2>Wall sit</h2>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 220" role="img" aria-label="Left: knees drifting past the toes and inward. Right: knees at ninety degrees, thighs parallel, back flat to the wall.">
+      <line x1="20" y1="182" x2="640" y2="182" stroke="#E4D3DE" stroke-width="3"/>
+      <rect x="76" y="24" width="14" height="158" rx="4" fill="#E4D3DE"/>
+      <rect x="406" y="24" width="14" height="158" rx="4" fill="#E4D3DE"/>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="104" cy="62" r="12" fill="#E5344E" stroke="none"/>
+        <path d="M104 74 L104 128" stroke="#E5344E" stroke-width="6"/>
+        <path d="M104 128 L204 134 L188 182" stroke="#E5344E" stroke-width="6"/>
+        <line x1="188" y1="182" x2="188" y2="120" stroke="#E5344E" stroke-width="2" stroke-dasharray="5 5"/>
+        <path d="M212 128 L232 128" stroke="#E5344E" stroke-width="3" marker-end="url(#fwd)"/>
+        <circle cx="434" cy="62" r="12" fill="#00A88A" stroke="none"/>
+        <path d="M434 74 L434 128" stroke="#00A88A" stroke-width="6"/>
+        <path d="M434 128 L522 128 L522 182" stroke="#00A88A" stroke-width="6"/>
+        <path d="M502 128 L502 148 L522 148" stroke="#00A88A" stroke-width="2.5" fill="none"/>
+      </g>
+      <defs><marker id="fwd" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#E5344E"/></marker></defs>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="160" y="208" font-size="14" font-weight="700" fill="#E5344E">Knees past the toes</text>
+        <text x="490" y="208" font-size="14" font-weight="700" fill="#00A88A">90° · thighs parallel</text>
+      </g>
+    </svg>
+  </figure>
+  <p>Back against a wall. Slide down to a seated position, knees at 90 degrees. Hold.</p>
+  <div class="breaks"><b>Breaks first under fatigue</b>The knees drift inward — the same collapse pattern that matters on landings. Worth catching here, where it's easy to see and there's no impact.</div>
+  <div class="bad"><b>Mistakes</b>Knees too far forward · Leaning off the wall · Letting the legs collapse inward</div>
+  <div class="think">"Still, strong, steady."</div>
+</section>
+
+<section class="card rev">
+  <h2>Rest between rounds</h2>
+  <p><strong>60 seconds</strong> after each full circuit. Use it properly.</p>
+  <p>Reset your breathing. Shake out your legs. Refocus your posture and core engagement.</p>
+  <div class="think">Don't rush recovery. Control it.</div>
+</section>
+
+<section class="card note rev">
+  <h2>Why this matters</h2>
+  <p>Cheer routines don't happen in perfect conditions. They happen <strong>after</strong> tumbling passes, <strong>after</strong> stunts, under fatigue, under pressure.</p>
+  <p>This circuit trains your body to stay explosive when tired, controlled when burning, and sharp when your muscles are shaking.</p>
+  <p><strong>Conditioning is not punishment. It's preparation.</strong> Every rep teaches your body one thing: <em>I don't lose technique when I get tired.</em></p>
+  <p>The strongest athletes aren't the ones who start strong. They're the ones who finish clean.</p>
+</section>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching. Stop the set when your form breaks, not when the reps run out.</p>
+</footer>
+
+</div>
+
+<div class="dock" id="dock">
+  <div class="inner">
+    <div class="dtop">
+      <div class="ring">
+        <svg width="66" height="66" viewBox="0 0 66 66">
+          <circle cx="33" cy="33" r="28" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/>
+          <circle id="arc" cx="33" cy="33" r="28" fill="none" stroke="#FFC53D" stroke-width="6" stroke-linecap="round" stroke-dasharray="175.9" stroke-dashoffset="0"/>
+        </svg>
+        <b id="clock">—</b>
+      </div>
+      <div class="dfig" id="dfig"></div>
+      <div style="flex:1;min-width:0">
+        <div class="drep" id="drep"></div>
+        <div class="dname" id="dname">Ready</div>
+        <div class="dnext" id="dnext"></div>
+      </div>
+    </div>
+    <div class="dbtns">
+      <button type="button" class="prime" id="pause">Pause</button>
+      <button type="button" id="skip">Next →</button>
+      <button type="button" class="icon" id="mute" aria-label="Mute">🔊</button>
+      <button type="button" class="icon" id="quit" aria-label="End">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pb=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    pb.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+
+  var F={
+    squat:'<svg viewBox="0 0 200 150"><line x1="10" y1="132" x2="190" y2="132" stroke="rgba(255,255,255,.25)" stroke-width="4"/><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M100 38 L104 84"/><path d="M104 84 L134 106 L128 132"/><path d="M100 50 L60 68"/></g><circle cx="100" cy="28" r="11" fill="#FFC53D"/></svg>',
+    toe:'<svg viewBox="0 0 200 150"><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M100 44 L100 92"/><path d="M100 88 L34 70"/><path d="M100 88 L166 70"/><path d="M100 58 L38 58"/><path d="M100 58 L162 58"/></g><circle cx="100" cy="34" r="11" fill="#FFC53D"/></svg>',
+    plank:'<svg viewBox="0 0 200 150"><line x1="10" y1="120" x2="190" y2="120" stroke="rgba(255,255,255,.25)" stroke-width="4"/><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M48 84 L48 120"/><path d="M48 84 L156 98 L162 120"/></g><circle cx="40" cy="74" r="10" fill="#FFC53D"/></svg>',
+    pike:'<svg viewBox="0 0 200 150"><line x1="10" y1="126" x2="190" y2="126" stroke="rgba(255,255,255,.25)" stroke-width="4"/><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M100 122 L154 46"/><path d="M100 122 L46 48"/></g><circle cx="100" cy="122" r="11" fill="#FFC53D"/></svg>',
+    calf:'<svg viewBox="0 0 200 150"><line x1="10" y1="132" x2="190" y2="132" stroke="rgba(255,255,255,.25)" stroke-width="4"/><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M100 32 L100 86"/><path d="M100 86 L88 118 L92 126"/><path d="M100 86 L112 118 L108 126"/><path d="M92 126 L82 132 M108 126 L118 132"/></g><circle cx="100" cy="22" r="11" fill="#FFC53D"/></svg>',
+    wall:'<svg viewBox="0 0 200 150"><line x1="10" y1="130" x2="190" y2="130" stroke="rgba(255,255,255,.25)" stroke-width="4"/><rect x="44" y="16" width="10" height="114" rx="3" fill="rgba(255,255,255,.3)"/><g fill="none" stroke="#FFC53D" stroke-width="8" stroke-linecap="round"><path d="M68 46 L68 88"/><path d="M68 88 L134 88 L134 130"/></g><circle cx="68" cy="36" r="11" fill="#FFC53D"/></svg>',
+    rest:''
+  };
+
+  /* [rounds, round rest] */
+  var PACES=[[2,60],[3,60],[3,40]], pace=1;
+  var pbtns=document.querySelectorAll('.pace button');
+  Array.prototype.forEach.call(pbtns,function(b){
+    b.addEventListener('click',function(){
+      Array.prototype.forEach.call(pbtns,function(x){x.classList.remove('on')});
+      b.classList.add('on'); pace=+b.getAttribute('data-p');
+    });
+  });
+
+  var SEQ=[];
+  function build(){
+    var P=PACES[pace], rounds=P[0], rrest=P[1], r;
+    SEQ=[{n:'GET READY',k:'rest',c:'Clear space. Wall nearby.',s:6,rep:'Starting',el:null}];
+    for(r=1;r<=rounds;r++){
+      var t='Round '+r+'/'+rounds;
+      SEQ.push({n:'Squat jumps × 10',k:'squat',c:'Explode up, absorb down.',s:40,rep:t,el:'e1'});
+      SEQ.push({n:'Rest',k:'rest',c:'Shake it out.',s:12,rep:t,el:null});
+      SEQ.push({n:'Toe touches × 10',k:'toe',c:'Sharp arms create sharp height.',s:45,rep:t,el:'e2'});
+      SEQ.push({n:'Rest',k:'rest',c:'Get down on the floor.',s:12,rep:t,el:null});
+      SEQ.push({n:'Plank',k:'plank',c:'Straight line, full tension.',s:15,rep:t,el:'e3'});
+      SEQ.push({n:'Rest',k:'rest',c:'Roll onto your back.',s:10,rep:t,el:null});
+      SEQ.push({n:'Pike snap-ups × 10',k:'pike',c:'Snap tight, lower slow.',s:40,rep:t,el:'e4'});
+      SEQ.push({n:'Rest',k:'rest',c:'Stand up.',s:12,rep:t,el:null});
+      SEQ.push({n:'Calf raises × 10',k:'calf',c:'Lift, hold, control.',s:35,rep:t,el:'e5'});
+      SEQ.push({n:'Rest',k:'rest',c:'Find the wall.',s:10,rep:t,el:null});
+      SEQ.push({n:'Wall sit',k:'wall',c:'Still, strong, steady. Knees at 90.',s:30,rep:t,el:'e6'});
+      if(r<rounds) SEQ.push({n:'ROUND REST',k:'rest',c:'Breathe. Round '+(r+1)+' next.',s:rrest,rep:'Between rounds',el:null});
+    }
+  }
+
+  var CIRC=175.9,i=-1,left=0,tick=null,paused=false,muted=false,ac=null;
+  var dock=document.getElementById('dock'),clock=document.getElementById('clock'),
+      arc=document.getElementById('arc'),dn=document.getElementById('dname'),
+      dx=document.getElementById('dnext'),dr=document.getElementById('drep'),
+      dfig=document.getElementById('dfig'),pauseB=document.getElementById('pause'),
+      streakEl=document.getElementById('streak');
+
+  function beep(hz,ms,vol){
+    if(muted)return;
+    try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+      var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);
+      o.frequency.value=hz;o.type='sine';g.gain.setValueAtTime(vol||.15,ac.currentTime);
+      g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+ms/1000);
+      o.start();o.stop(ac.currentTime+ms/1000);}catch(e){}
+  }
+  function fmt(s){var m=Math.floor(s/60);return m?m+':'+String(s%60).padStart(2,'0'):String(s)}
+  function hl(id){
+    var all=document.querySelectorAll('.ex');
+    Array.prototype.forEach.call(all,function(e){e.classList.remove('live')});
+    var el=id?document.getElementById(id):null;
+    if(el){el.classList.add('live');el.scrollIntoView({behavior:'smooth',block:'start'})}
+  }
+  function render(){
+    var st=SEQ[i];
+    dr.textContent=st.rep; dn.textContent=st.n; dx.textContent=st.c;
+    clock.textContent=fmt(left); arc.style.strokeDashoffset=CIRC*(1-left/st.s);
+    dfig.innerHTML=F[st.k]||'';
+    pauseB.textContent=paused?'Resume':'Pause';
+  }
+  function go(n){
+    clearInterval(tick);i=n;
+    if(i>=SEQ.length){finish();return}
+    var st=SEQ[i];left=st.s;paused=false;hl(st.el);render();
+    if(st.el)beep(700,90,.13);
+    tick=setInterval(function(){
+      if(paused)return;left--;
+      if(left<=3&&left>0&&st.el)beep(620,70,.1);
+      if(left<=0){beep(940,220);clearInterval(tick);setTimeout(function(){go(i+1)},280);return}
+      render();
+    },1000);
+  }
+  function finish(){
+    clearInterval(tick);dock.classList.remove('on');dfig.innerHTML='';hl(null);
+    beep(880,180);setTimeout(function(){beep(1180,300)},200);
+    try{var d=JSON.parse(localStorage.getItem('cir-log')||'{"n":0,"last":""}');
+      var today=new Date().toISOString().slice(0,10);
+      if(d.last!==today){d.n++;d.last=today;localStorage.setItem('cir-log',JSON.stringify(d))}}catch(e){}
+    showStreak(true);
+    document.getElementById('start').textContent='▶︎ Run it again';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function showStreak(justDone){
+    try{var d=JSON.parse(localStorage.getItem('cir-log')||'{"n":0,"last":""}');
+      if(!d.n){streakEl.textContent='';return}
+      var today=new Date().toISOString().slice(0,10);
+      streakEl.textContent=(justDone?'Finished clean. ':'')+d.n+' circuit'+(d.n>1?'s':'')+' logged'+
+        (d.last===today?' · today ✓':'');}catch(e){}
+  }
+  document.getElementById('start').addEventListener('click',function(){
+    build(); dock.classList.add('on'); beep(720,120); go(0);
+  });
+  pauseB.addEventListener('click',function(){paused=!paused;render()});
+  document.getElementById('skip').addEventListener('click',function(){go(i+1)});
+  document.getElementById('quit').addEventListener('click',function(){
+    clearInterval(tick);dock.classList.remove('on');dfig.innerHTML='';hl(null);
+  });
+  document.getElementById('mute').addEventListener('click',function(){
+    muted=!muted;this.textContent=muted?'🔇':'🔊';
+  });
+  showStreak(false);
+})();
+</script>
+</body>
+</html>
