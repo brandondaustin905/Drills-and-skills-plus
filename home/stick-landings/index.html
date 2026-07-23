@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A1244">
+<title>Stick the Landing — Safe at Home — Drills &amp; Skills+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--grape:#2A1244;--body:#4A4358;--hot:#FF2E7E;--gold:#FFC53D;--teal:#00A88A;--red:#E5344E;--violet:#8B5CB8;
+  --grn:#0E9E6E;--grnbg:#E7F7F0;--grnln:#B4E6D4;
+  --bg:#FFF4F8;--card:#FFFFFF;--line:#F0DCE7;--shadow:0 2px 4px rgba(42,18,68,.05),0 12px 28px rgba(42,18,68,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 "DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:rgba(42,18,68,.08);z-index:60}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--grn),var(--gold));transition:width .12s linear}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 150px}
+.hero{padding:54px 0 26px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px;background:var(--grnbg);color:#0A6B4B;border:1.5px solid var(--grn)}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;color:var(--grape);font-size:clamp(38px,11.5vw,60px);line-height:.94;margin:12px 0 0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--grn)}
+.dek{font-size:18px;margin:16px 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--grape)}
+.card{background:var(--card);border-radius:20px;padding:24px 22px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-weight:700;color:var(--grape);font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+.card h3{font-size:16px;font-weight:700;color:var(--grape);margin:18px 0 6px}
+.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+.note{background:linear-gradient(135deg,#2A1244,#5B2178);color:#F3E3FA}
+.note h2{color:#fff}.note strong{color:var(--gold)}
+.hero2{background:linear-gradient(135deg,#0A6B4B,#0E9E6E);color:#E7F7F0}
+.hero2 h2{color:#fff}.hero2 strong{color:var(--gold)}
+.warnc{background:linear-gradient(135deg,#3D0A18,#8C1030);color:#FBD9E1}
+.warnc h2{color:#fff}.warnc strong{color:#FFD9E3}
+.step{position:relative;padding-top:32px;scroll-margin-top:80px}
+.step.live{outline:3px solid var(--grn);outline-offset:3px}
+.num{position:absolute;top:-16px;left:22px;width:46px;height:46px;border-radius:14px;background:var(--grn);color:#fff;
+  font-family:Anton,sans-serif;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(14,158,110,.34)}
+.tag{display:inline-block;background:var(--grnbg);color:#0A6B4B;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:8px;margin-bottom:10px}
+.rule{background:#FFFAEC;border:1.5px solid #FFE3A3;border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:15.5px}
+.rule b{color:#7A5200;display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.fx{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--line)}
+.fx:last-child{border-bottom:0;padding-bottom:0}
+.fx .ic{flex:0 0 30px;height:30px;border-radius:9px;background:#FFE4EB;display:grid;place-items:center}
+.fx b{display:block;color:var(--grape);font-size:15.5px}
+.fx span{font-size:15px}
+.fx em{font-style:normal;color:var(--grn);font-weight:700}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.stat div{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.26);border-radius:15px;padding:15px 13px;text-align:center}
+.stat b{display:block;font-family:Anton,sans-serif;font-size:30px;color:#FFC53D;line-height:1}
+.stat span{display:block;font-size:13px;margin-top:6px;color:#D6F5EC;line-height:1.35}
+.lvl{display:grid;grid-template-columns:auto 1fr;gap:9px 13px;margin-top:12px;font-size:15px}
+.lvl div:nth-child(odd){font-weight:700;color:var(--grn);white-space:nowrap;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+figure{margin:14px -6px;background:#FCF7FA;border:1px solid var(--line);border-radius:16px;padding:14px 12px}
+figcaption{font-size:13.5px;color:#7A7288;margin-top:9px;padding:0 4px}
+svg.dia{width:100%;height:auto;display:block}
+.launch{background:linear-gradient(135deg,#0E9E6E,#0A6B4B);color:#fff;text-align:center}
+.launch h2{color:#fff;font-size:26px}.launch p{color:#D6F5EC}
+.pace{display:flex;gap:8px;margin:16px 0 4px}
+.pace button{flex:1;background:rgba(255,255,255,.16);color:#fff;border:2px solid transparent;border-radius:12px;padding:10px 6px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;line-height:1.2}
+.pace button span{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-top:3px}
+.pace button.on{background:#fff;color:#0A6B4B;border-color:#fff}
+.go{display:inline-block;background:#fff;color:#0A6B4B;border:0;border-radius:14px;padding:15px 30px;font:inherit;font-size:17px;font-weight:700;cursor:pointer;margin-top:12px;box-shadow:0 6px 18px rgba(0,0,0,.16)}
+.go:active{transform:translateY(1px)}
+.streak{margin-top:14px;font-size:14px;color:#D6F5EC}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--grape);color:#fff;
+  padding:14px 18px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(42,18,68,.35);
+  transform:translateY(120%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock .inner{max-width:604px;margin:0 auto}
+.dtop{display:flex;align-items:center;gap:14px}
+.ring{position:relative;flex:0 0 66px;height:66px}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:22px}
+.dfig{flex:0 0 66px}
+.dfig svg{width:66px;height:78px;display:block}
+.dname{font-size:18px;font-weight:700;line-height:1.2}
+.dnext{font-size:13px;opacity:.75;margin-top:2px}
+.drep{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;opacity:.62;font-weight:700}
+.dbtns{display:flex;gap:8px;margin-top:12px}
+.dbtns button{flex:1;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:11px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.dbtns button.prime{background:#fff;color:var(--grape)}
+.dbtns button.icon{flex:0 0 46px}
+footer{text-align:center;font-size:13.5px;color:#8B8398;padding:34px 6px 0}
+footer a{color:var(--hot)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.dock{transition:none}}
+</style>
+</head>
+<body>
+<div class="bar"><i id="prog"></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 L10 17.5 L19 6.5" stroke="#0A6B4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Green · safe at home</span>
+  <h1>Stick the<br><em>Landing</em></h1>
+  <p class="dek">30 reps. The most protective ten minutes in this whole section — and the part judges remember.</p>
+  <div class="chips"><span class="chip">⏱ ~8 min</span><span class="chip">🏠 Soft surface</span><span class="chip">🦵 Knee protection</span></div>
+</header>
+
+<section class="card launch rev">
+  <h2>Guided drill</h2>
+  <p>All 30 reps counted, every 2-second hold timed, rests handled. Phone down, follow the calls.</p>
+  <div class="pace">
+    <button type="button" data-p="0">Beginner<span>2 sets · 2s hold</span></button>
+    <button type="button" data-p="1" class="on">Standard<span>3 sets · 2s hold</span></button>
+    <button type="button" data-p="2">Advanced<span>3 sets · 4s hold</span></button>
+  </div>
+  <button class="go" id="start" type="button">▶︎ Start drill</button>
+  <div class="streak" id="streak"></div>
+</section>
+
+<section class="card hero2 rev">
+  <h2>Why this one matters more than it looks</h2>
+  <p>Most things sold as injury prevention have thin evidence behind them. <strong>This doesn't.</strong></p>
+  <p>Programs that teach athletes to land properly — bent knees, controlled, knees tracking over toes — are among the <strong>best-evidenced interventions in youth sport</strong> for reducing knee injury risk, particularly ACL injuries in female athletes.</p>
+  <div class="stat">
+    <div><b>↑</b><span>More knee bend on landing — consistently shown across studies</span></div>
+    <div><b>↓</b><span>Less inward knee collapse, the pattern that causes the damage</span></div>
+  </div>
+  <p style="margin-top:16px">One study found <strong>six weeks</strong> of jump-landing training cut landing force in teenage female athletes by more than a full bodyweight.</p>
+  <p>So this isn't just a scoring drill. Done properly and consistently, it changes how your knees handle every landing you'll ever do.</p>
+</section>
+
+<section class="card warnc rev">
+  <h2>The thing your knees must not do</h2>
+  <p>The dangerous pattern is called <strong>knee valgus</strong> — dynamic knee collapse. The hip rotates inward, the knee caves toward the midline, the ankle rolls in. That combination is the mechanism behind most non-contact ACL injuries.</p>
+  <figure style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)">
+    <svg class="dia" viewBox="0 0 660 250" role="img" aria-label="Front view. Left: knees caving inward toward each other on landing, dangerous. Right: knees tracking in line over the toes, safe.">
+      <line x1="20" y1="212" x2="640" y2="212" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="165" cy="42" r="14" fill="#FF6B7F" stroke="none"/>
+        <path d="M165 56 L165 116" stroke="#FF6B7F" stroke-width="7"/>
+        <path d="M165 116 L118 122 M165 116 L212 122" stroke="#FF6B7F" stroke-width="7"/>
+        <path d="M118 122 L150 158 L124 212" stroke="#FF6B7F" stroke-width="7"/>
+        <path d="M212 122 L180 158 L206 212" stroke="#FF6B7F" stroke-width="7"/>
+        <circle cx="150" cy="158" r="9" fill="#FFC53D"/>
+        <circle cx="180" cy="158" r="9" fill="#FFC53D"/>
+        <path d="M132 176 L152 172 M198 176 L178 172" stroke="#FFC53D" stroke-width="3" marker-end="url(#kv)"/>
+        <circle cx="495" cy="42" r="14" fill="#8FE3C4" stroke="none"/>
+        <path d="M495 56 L495 116" stroke="#8FE3C4" stroke-width="7"/>
+        <path d="M495 116 L448 122 M495 116 L542 122" stroke="#8FE3C4" stroke-width="7"/>
+        <path d="M448 122 L444 160 L446 212" stroke="#8FE3C4" stroke-width="7"/>
+        <path d="M542 122 L546 160 L544 212" stroke="#8FE3C4" stroke-width="7"/>
+        <circle cx="444" cy="160" r="9" fill="#8FE3C4"/>
+        <circle cx="546" cy="160" r="9" fill="#8FE3C4"/>
+        <line x1="446" y1="118" x2="446" y2="212" stroke="#8FE3C4" stroke-width="2" stroke-dasharray="6 5"/>
+        <line x1="544" y1="118" x2="544" y2="212" stroke="#8FE3C4" stroke-width="2" stroke-dasharray="6 5"/>
+      </g>
+      <defs><marker id="kv" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#FFC53D"/></marker></defs>
+      <g font-family="DM Sans,sans-serif" text-anchor="middle">
+        <text x="165" y="240" font-size="14.5" font-weight="700" fill="#FF9BA8">Knees cave in — danger</text>
+        <text x="495" y="240" font-size="14.5" font-weight="700" fill="#8FE3C4">Knees over toes — safe</text>
+      </g>
+    </svg>
+    <figcaption style="color:#F2C4CF">Filming yourself from the <strong>front</strong> is the only way to see this. From the side it's invisible.</figcaption>
+  </figure>
+  <p><strong>The fix is your glutes.</strong> Strong glutes resist the inward collapse — which is why "push the knees slightly outward and squeeze" is the correct cue, not just a coaching preference.</p>
+  <p>Worth knowing: before puberty, boys and girls land essentially the same way. After puberty, female athletes tend to develop the patterns that raise ACL risk. <strong>There's a window</strong> — the earlier you train good landings, the more they stick.</p>
+</section>
+
+<section class="card rev">
+  <h2>The rep</h2>
+  <p><strong>3 sets of 10.</strong> Rest 30–45 seconds between sets. Every rep follows the same four beats.</p>
+  <figure>
+    <svg class="dia" viewBox="0 0 660 230" role="img" aria-label="Four beats of the rep: jump straight up, stay tight in the air, stick the landing with bent knees, then reset tall.">
+      <line x1="20" y1="192" x2="640" y2="192" stroke="#E4D3DE" stroke-width="3"/>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="85" cy="66" r="11" fill="#0E9E6E" stroke="none"/>
+        <path d="M85 77 L85 124" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M85 124 L74 158 L74 192 M85 124 L96 158 L96 192" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M85 88 L64 54 M85 88 L106 54" stroke="#FF2E7E" stroke-width="6"/>
+        <circle cx="245" cy="40" r="11" fill="#0E9E6E" stroke="none"/>
+        <path d="M245 51 L245 110" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M245 110 L240 152 L240 178 M245 110 L250 152 L250 178" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M245 62 L228 24 M245 62 L262 24" stroke="#FF2E7E" stroke-width="6"/>
+        <circle cx="420" cy="62" r="11" fill="#0E9E6E" stroke="none"/>
+        <path d="M420 73 L420 122" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M420 122 L400 152 L404 192 M420 122 L440 152 L436 192" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M420 84 L398 112 M420 84 L442 112" stroke="#FF2E7E" stroke-width="6"/>
+        <circle cx="588" cy="52" r="11" fill="#0E9E6E" stroke="none"/>
+        <path d="M588 63 L588 126" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M588 126 L580 158 L580 192 M588 126 L596 158 L596 192" stroke="#0E9E6E" stroke-width="6"/>
+        <path d="M578 74 L574 118 M598 74 L602 118" stroke="#FF2E7E" stroke-width="6"/>
+      </g>
+      <g font-family="DM Sans,sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#0A6B4B">
+        <text x="85" y="218">1 · JUMP</text>
+        <text x="245" y="218">2 · TIGHT</text>
+        <text x="420" y="218">3 · STICK</text>
+        <text x="588" y="218">4 · RESET</text>
+      </g>
+    </svg>
+    <figcaption>Note beat 3 — knees bent, chest still tall. You're absorbing, not collapsing.</figcaption>
+  </figure>
+</section>
+
+<section class="card step rev" id="s1">
+  <div class="num">1</div><span class="tag">Up, not out</span>
+  <h2>Jump straight up</h2>
+  <p>Dip slightly — controlled, not deep. Swing your arms up fast. Jump <strong>vertically</strong>; don't travel forward.</p>
+  <div class="rule"><b>The cue</b>Up, not out. If you're drifting forward across the floor, the dip is too deep or you're leaning.</div>
+</section>
+
+<section class="card step rev" id="s2">
+  <div class="num">2</div><span class="tag">In the air</span>
+  <h2>Stay tight</h2>
+  <p>Body tight, core engaged, legs straight. <strong>Prepare for the landing before you hit the ground</strong> — a landing you didn't plan for is a landing you absorb badly.</p>
+</section>
+
+<section class="card step rev" id="s3">
+  <div class="num">3</div><span class="tag">The whole point</span>
+  <h2>Stick it</h2>
+  <p>Land and freeze. <strong>Hold two seconds, every single rep.</strong></p>
+  <div class="lvl">
+    <div>Knees</div><div>Track over the toes. Never caving inward.</div>
+    <div>Chest</div><div>Stays lifted.</div>
+    <div>Core</div><div>Tight.</div>
+    <div>Feet</div><div>Flat and quiet.</div>
+    <div>Steps</div><div>None. Not one.</div>
+  </div>
+</section>
+
+<section class="card step rev" id="s4">
+  <div class="num">4</div><span class="tag">Don't skip</span>
+  <h2>Reset</h2>
+  <p>Stand tall again before the next jump. Don't rush — the reset is what makes each rep a separate, deliberate rep rather than a bounce.</p>
+</section>
+
+<section class="card rev">
+  <h2>Mistakes &amp; fixes</h2>
+  <div class="fx"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M7 7 L17 17 M17 7 L7 17" stroke="#B0122C" stroke-width="3" stroke-linecap="round"/></svg></div><div><b>Landing loud or heavy</b><span>Bend the knees softly. <em>→ Don't lock your legs on impact.</em></span></div></div>
+  <div class="fx"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M7 7 L17 17 M17 7 L7 17" stroke="#B0122C" stroke-width="3" stroke-linecap="round"/></svg></div><div><b>Knees collapsing inward</b><span>The important one. <em>→ Push the knees slightly outward and squeeze your glutes.</em></span></div></div>
+  <div class="fx"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M7 7 L17 17 M17 7 L7 17" stroke="#B0122C" stroke-width="3" stroke-linecap="round"/></svg></div><div><b>Falling forward or backward</b><span>Chest lifted. <em>→ Weight centred over the middle of your foot.</em></span></div></div>
+  <div class="fx"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M7 7 L17 17 M17 7 L7 17" stroke="#B0122C" stroke-width="3" stroke-linecap="round"/></svg></div><div><b>Rushing reps</b><span>Reset fully between each jump. <em>→ Quality over speed, always.</em></span></div></div>
+</section>
+
+<section class="card rev">
+  <h2>Adjust it</h2>
+  <h3>Beginner</h3>
+  <p>Smaller jump height. Practise just jump → land → hold, with no focus on speed. Step down instead of jumping if you need to.</p>
+  <h3>Advanced</h3>
+  <p>Increase jump height <strong>while keeping the landings silent</strong>. Hold each landing 3–5 seconds. Add fatigue by running this after another drill or circuit.</p>
+  <div class="rule"><b>The honest test</b>If height goes up but the landings get louder, you've gone backwards. Silence is the standard, not height.</div>
+</section>
+
+<section class="card note rev">
+  <h2>Why this matters</h2>
+  <p>In cheerleading a landing is never <em>just</em> a landing. It's where routines are scored, stabilised, and remembered.</p>
+  <p>A clean landing shows control, confidence and safety. A messy landing shows instability — even if the skill in the air looked strong.</p>
+  <p>And unlike almost anything else you'll practise, <strong>this one protects you for the rest of your career.</strong></p>
+</section>
+
+<footer>
+  <p><strong>Drills &amp; Skills+</strong> · The Cheer Hub<br>Educational reference — not a substitute for in-person coaching. Landing-mechanics evidence from <a href="https://link.springer.com/article/10.1007/s40279-025-02190-w">Sports Medicine systematic review &amp; meta-analysis</a> on neuromuscular training and jump-landing biomechanics in youth females.</p>
+</footer>
+
+</div>
+
+<div class="dock" id="dock">
+  <div class="inner">
+    <div class="dtop">
+      <div class="ring">
+        <svg width="66" height="66" viewBox="0 0 66 66">
+          <circle cx="33" cy="33" r="28" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/>
+          <circle id="arc" cx="33" cy="33" r="28" fill="none" stroke="#FFC53D" stroke-width="6" stroke-linecap="round" stroke-dasharray="175.9" stroke-dashoffset="0"/>
+        </svg>
+        <b id="clock">—</b>
+      </div>
+      <div class="dfig" id="dfig"></div>
+      <div style="flex:1;min-width:0">
+        <div class="drep" id="drep"></div>
+        <div class="dname" id="dname">Ready</div>
+        <div class="dnext" id="dnext"></div>
+      </div>
+    </div>
+    <div class="dbtns">
+      <button type="button" class="prime" id="pause">Pause</button>
+      <button type="button" id="skip">Next →</button>
+      <button type="button" class="icon" id="mute" aria-label="Mute">🔊</button>
+      <button type="button" class="icon" id="quit" aria-label="End">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pb=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;
+    pb.style.width=(h>0?(scrollY/h)*100:0)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{rootMargin:'0px 0px -8%'});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')})}
+
+  var FIG={
+    jump:'<circle cx="60" cy="28" r="10" fill="#fff"/><path d="M60 38 L60 84" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M60 84 L50 112 L50 140 M60 84 L70 112 L70 140" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M60 48 L42 18 M60 48 L78 18" stroke="#FFC53D" stroke-width="5" stroke-linecap="round"/>',
+    stick:'<circle cx="60" cy="34" r="10" fill="#fff"/><path d="M60 44 L60 88" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M60 88 L44 112 L47 140 M60 88 L76 112 L73 140" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M60 54 L42 78 M60 54 L78 78" stroke="#FFC53D" stroke-width="5" stroke-linecap="round"/>',
+    reset:'<circle cx="60" cy="24" r="10" fill="#fff"/><path d="M60 34 L60 92" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M60 92 L53 118 L53 140 M60 92 L67 118 L67 140" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M50 42 L46 86 M70 42 L74 86" stroke="#FFC53D" stroke-width="5" stroke-linecap="round"/>',
+    rest:''
+  };
+  function fig(k){return k&&FIG[k]?'<svg viewBox="0 0 120 150">'+FIG[k]+'</svg>':''}
+
+  /* [sets, hold secs, reset secs] */
+  var PACES=[[2,2,4],[3,2,3],[3,4,3]], pace=1;
+  var pbtns=document.querySelectorAll('.pace button');
+  Array.prototype.forEach.call(pbtns,function(b){
+    b.addEventListener('click',function(){
+      Array.prototype.forEach.call(pbtns,function(x){x.classList.remove('on')});
+      b.classList.add('on'); pace=+b.getAttribute('data-p');
+    });
+  });
+
+  var SEQ=[];
+  function build(){
+    var P=PACES[pace], sets=P[0], hold=P[1], rst=P[2], s, r;
+    SEQ=[{n:'GET READY',k:'reset',c:'Feet together. Tall. Soft surface.',s:6,rep:'Starting',el:null}];
+    for(s=1;s<=sets;s++){
+      for(r=1;r<=10;r++){
+        SEQ.push({n:'JUMP',k:'jump',c:'Up, not out. Arms fast.',s:2,rep:'Set '+s+'/'+sets+' · rep '+r+'/10',el:'s1'});
+        SEQ.push({n:'STICK — hold',k:'stick',c:'Knees over toes. Quiet. Freeze.',s:hold,rep:'Set '+s+'/'+sets+' · rep '+r+'/10',el:'s3'});
+        SEQ.push({n:'Reset',k:'reset',c:'Stand tall. Don\u2019t rush.',s:rst,rep:'Set '+s+'/'+sets+' · rep '+r+'/10',el:'s4'});
+      }
+      if(s<sets) SEQ.push({n:'SET REST',k:'rest',c:'Breathe. Set '+(s+1)+' next.',s:40,rep:'Between sets',el:null});
+    }
+  }
+
+  var CIRC=175.9,i=-1,left=0,tick=null,paused=false,muted=false,ac=null;
+  var dock=document.getElementById('dock'),clock=document.getElementById('clock'),
+      arc=document.getElementById('arc'),dn=document.getElementById('dname'),
+      dx=document.getElementById('dnext'),dr=document.getElementById('drep'),
+      dfig=document.getElementById('dfig'),pauseB=document.getElementById('pause'),
+      streakEl=document.getElementById('streak');
+
+  function beep(hz,ms,vol){
+    if(muted)return;
+    try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+      var o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);
+      o.frequency.value=hz;o.type='sine';g.gain.setValueAtTime(vol||.15,ac.currentTime);
+      g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+ms/1000);
+      o.start();o.stop(ac.currentTime+ms/1000);}catch(e){}
+  }
+  function fmt(s){var m=Math.floor(s/60);return m?m+':'+String(s%60).padStart(2,'0'):String(s)}
+  function hl(id){
+    var all=document.querySelectorAll('.step');
+    Array.prototype.forEach.call(all,function(e){e.classList.remove('live')});
+    var el=id?document.getElementById(id):null; if(el)el.classList.add('live');
+  }
+  function render(){
+    var st=SEQ[i];
+    dr.textContent=st.rep; dn.textContent=st.n; dx.textContent=st.c;
+    clock.textContent=fmt(left); arc.style.strokeDashoffset=CIRC*(1-left/st.s);
+    dfig.innerHTML=fig(st.k);
+    pauseB.textContent=paused?'Resume':'Pause';
+  }
+  function go(n){
+    clearInterval(tick);i=n;
+    if(i>=SEQ.length){finish();return}
+    var st=SEQ[i];left=st.s;paused=false;hl(st.el);render();
+    if(st.n==='JUMP')beep(840,90,.14);
+    if(st.n.indexOf('STICK')===0)beep(600,110,.14);
+    tick=setInterval(function(){
+      if(paused)return;left--;
+      if(left<=0){clearInterval(tick);setTimeout(function(){go(i+1)},200);return}
+      render();
+    },1000);
+  }
+  function finish(){
+    clearInterval(tick);dock.classList.remove('on');dfig.innerHTML='';hl(null);
+    beep(880,180);setTimeout(function(){beep(1180,300)},200);
+    try{var d=JSON.parse(localStorage.getItem('sl-log')||'{"n":0,"last":""}');
+      var today=new Date().toISOString().slice(0,10);
+      if(d.last!==today){d.n++;d.last=today;localStorage.setItem('sl-log',JSON.stringify(d))}}catch(e){}
+    showStreak(true);
+    document.getElementById('start').textContent='▶︎ Run it again';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function showStreak(justDone){
+    try{var d=JSON.parse(localStorage.getItem('sl-log')||'{"n":0,"last":""}');
+      if(!d.n){streakEl.textContent='';return}
+      var today=new Date().toISOString().slice(0,10);
+      streakEl.textContent=(justDone?'Landings banked. ':'')+d.n+' session'+(d.n>1?'s':'')+' logged'+
+        (d.last===today?' · today ✓':'');}catch(e){}
+  }
+  document.getElementById('start').addEventListener('click',function(){
+    build(); dock.classList.add('on'); beep(720,120); go(0);
+  });
+  pauseB.addEventListener('click',function(){paused=!paused;render()});
+  document.getElementById('skip').addEventListener('click',function(){go(i+1)});
+  document.getElementById('quit').addEventListener('click',function(){
+    clearInterval(tick);dock.classList.remove('on');dfig.innerHTML='';hl(null);
+  });
+  document.getElementById('mute').addEventListener('click',function(){
+    muted=!muted;this.textContent=muted?'🔇':'🔊';
+  });
+  showStreak(false);
+})();
+</script>
+</body>
+</html>
